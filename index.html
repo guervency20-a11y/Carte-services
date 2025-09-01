@@ -1,0 +1,1636 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Guerlyne Vital - Servicios Profesionales</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+
+        /* Nueva Paleta de Colores Verde Vibrante */
+        :root {
+            --primary: #22c55e;
+            --primary-light: #4ade80;
+            --primary-dark: #16a34a;
+            --secondary: #10b981;
+            --accent: #34d399;
+            --soft-green: #dcfce7;
+            --mint: #d1fae5;
+            --text-dark: #1f2937;
+            --text-light: #4b5563;
+            --white: #ffffff;
+            --gray-light: #f9fafb;
+            --card-bg: #ffffff;
+            --shadow: 0 4px 6px rgba(34, 197, 94, 0.1);
+            --shadow-hover: 0 8px 25px rgba(34, 197, 94, 0.15);
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes modalFadeOut {
+            from {
+                opacity: 1;
+                transform: scale(1);
+            }
+            to {
+                opacity: 0;
+                transform: scale(0.7);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-left {
+            animation: fadeInLeft 0.8s ease-out forwards;
+        }
+
+        .animate-right {
+            animation: fadeInRight 0.8s ease-out forwards;
+        }
+
+        .hidden {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: var(--white);
+            padding: 1rem 0;
+            box-shadow: var(--shadow);
+            z-index: 1000;
+            display: none;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        .nav-logo {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-toggle {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 70px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 70px);
+            background: var(--white);
+            transition: left 0.3s ease;
+            padding: 2rem;
+        }
+
+        .nav-menu.active {
+            left: 0;
+        }
+
+        .nav-menu a {
+            display: block;
+            padding: 1rem 0;
+            color: var(--text-dark);
+            text-decoration: none;
+            border-bottom: 1px solid #eee;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        /* Hero Section - Improved Gradient */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(-45deg, #22c55e, #16a34a, #10b981, #0d9488, #059669);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            display: flex;
+            align-items: center;
+            padding: 2rem 1rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(34, 197, 94, 0.1) 0%, transparent 70%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text {
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-text .highlight {
+            color: var(--white);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0 8px;
+            border-radius: 6px;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: rgba(199, 0, 0, 0.9);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .hero-avatar {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 2rem;
+            background: var(--white);
+            padding: 8px;
+            box-shadow: var(--shadow-hover);
+            position: relative;
+        }
+
+        .hero-avatar img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--white), var(--mint));
+            color: var(--primary-dark);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+            background: linear-gradient(135deg, var(--mint), var(--white));
+        }
+
+        /* Services Section */
+        .services {
+            padding: 5rem 1rem;
+            background: var(--gray-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            text-align: center;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary-light);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 2.5rem;
+            max-width: 700px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.7);
+            transition: all 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: scale(1);
+            animation: modalFadeIn 0.3s ease forwards;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-light);
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .modal-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: var(--white);
+            margin-right: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.8rem;
+            color: var(--primary-dark);
+            margin: 0;
+        }
+
+        .modal-body {
+            color: var(--text-light);
+            line-height: 1.8;
+        }
+
+        .modal-description {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .modal-features {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+
+        .modal-features li {
+            padding: 0.8rem 0;
+            position: relative;
+            padding-left: 2rem;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .modal-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        .modal-pricing {
+            background: var(--soft-green);
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+        }
+
+        .modal-pricing h4 {
+            color: var(--primary-dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-pricing p {
+            margin: 0.5rem 0;
+        }
+
+        .modal-cta {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .modal-cta .cta-button {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        /* FAQ Section - Improved */
+        .faq {
+            padding: 5rem 1rem;
+            background: var(--white);
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            margin-bottom: 1rem;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid #e5e7eb;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: var(--card-bg);
+            border: none;
+            width: 100%;
+            text-align: left;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            background: var(--soft-green);
+        }
+
+        .faq-question.active {
+            background: var(--primary-light);
+            color: var(--white);
+        }
+
+        .faq-caret {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+        }
+
+        .faq-question.active .faq-caret {
+            transform: rotate(180deg);
+            color: var(--white);
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .faq-answer.active {
+            max-height: 200px;
+            padding: 1.5rem;
+        }
+
+        .faq-answer p {
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+       /* ===== REVIEWS SECTION ===== */
+.reviews-section {
+  padding: 30px 20px;
+  background: var(--white);
+  border-radius: 16px;
+  margin: 30px auto;
+  max-width: 1200px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: var(--shadow);
+}
+
+.reviews-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: left;
+  gap: 12px;
+  font-weight: 600;
+  padding-left: 10px;
+  margin-top: 50px;
+  color: var(--text-dark);
+}
+
+.reviews-section h3 i {
+  color: #ffc107; /* étoiles dorées */
+  font-size: 1.5rem;
+}
+
+.reviews-container {
+  position: relative;
+  margin-top: -30px;
+}
+
+.reviews {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  scrollbar-width: none; 
+  -ms-overflow-style: none;
+  padding: 15px 10px 30px;
+  scroll-snap-type: x mandatory;
+}
+.reviews::-webkit-scrollbar { display: none; }
+
+/* Review Card */
+.review-card {
+  background: var(--card-bg);
+  min-width: 320px;
+  max-width: 320px;
+  padding: 25px;
+  border-radius: 20px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: var(--shadow);
+  scroll-snap-align: start;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
+  border-color: var(--primary-light);
+}
+
+.review-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+.reviewer-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--primary-light);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.reviewer-info {
+  flex: 1;
+}
+
+.review-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.review-date {
+  font-size: 0.75rem;
+  color: var(--text-light);
+  margin-bottom: 8px;
+}
+
+.stars {
+  color: #ffc107;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.review-content {
+  position: relative;
+}
+
+.review-card p {
+  font-size: 0.95rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  max-height: 95px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.review-card.expanded p {
+  max-height: 500px;
+}
+
+.read-more {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: var(--primary);
+  font-weight: 600;
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 5px 12px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.read-more:hover {
+  background: rgba(0, 0, 0, 0.1);
+  color: var(--primary);
+}
+
+/* Navigation Arrows */
+.reviews-nav {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.nav-btn {
+  background: var(--soft-green);
+  border: none;
+  color: var(--primary-dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  background: var(--primary);
+  color: white;
+  transform: scale(1.1);
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1024px) {
+  .review-card {
+    min-width: 300px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .reviews-section {
+    margin: 20px 0;
+    border-radius: 0;
+    padding: 25px 15px;
+  }
+  
+  .reviews-section h3 {
+    font-size: 1.5rem;
+  }
+  
+  .review-card {
+    min-width: 280px;
+    max-width: 280px;
+    padding: 20px;
+  }
+  
+  .reviewer-avatar {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 10px;
+  }
+  
+  .reviews-section {
+    padding: 20px 10px;
+  }
+  
+  .reviews-section h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .review-card {
+    min-width: 260px;
+    max-width: 260px;
+    padding: 18px;
+  }
+  
+  .review-header {
+    gap: 12px;
+  }
+  
+  .reviewer-avatar {
+    width: 45px;
+    height: 45px;
+  }
+  
+  .review-card h4 {
+    font-size: 1rem;
+  }
+  
+  .review-card p {
+    font-size: 0.9rem;
+  }
+}
+
+        /* Contact Section - Reduced Height */
+        .contact {
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--white);
+        }
+
+        .contact-content {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .contact-method {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .contact-method:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .contact-method i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .contact-method h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-method a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        /* Footer - Improved */
+        .footer {
+            background: var(--text-dark);
+            color: var(--white);
+            padding: 3rem 1rem 1rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .footer-section h3 {
+            color: var(--primary-light);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-contact {
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact p {
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .footer-contact a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-developer {
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+        }
+
+        .developer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .developer-links a {
+            color: var(--white);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .developer-links a:hover {
+            color: var(--primary-light);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1rem;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+            opacity: 0.7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-nav {
+                display: block;
+            }
+
+            body {
+                padding-top: 70px;
+            }
+
+            .hero {
+                min-height: calc(100vh - 70px);
+            }
+
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .contact h2 {
+                font-size: 2rem;
+            }
+
+            .modal-content {
+                max-height: 80vh;
+                width: 95%;
+                margin: 1rem;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                text-align: left;
+            }
+
+            .hero-text {
+                text-align: left;
+            }
+
+            .hero-avatar {
+                margin: 0;
+                width: 300px;
+                height: 300px;
+            }
+
+            .hero-text h1 {
+                font-size: 3.5rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                text-align: left;
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .scroll-animate.animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Mobile Navigation -->
+    <nav class="mobile-nav">
+        <div class="nav-container">
+            <div class="nav-logo">Guerlyne Vital</div>
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <div class="nav-menu">
+            <a href="#hero">Inicio</a>
+            <a href="#services">Servicios</a>
+            <a href="#reviews">Reseñas</a>
+            <a href="#faq">Preguntas Frecuentes</a>
+            <a href="#contact">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <div class="hero-text animate-in">
+                <div class="hero-avatar">
+                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Avatar">
+                </div>
+                <h1>Soy <span class="highlight">Guerlyne Vital</span></h1>
+                <p>Profesional en servicios de limpieza, cuidado y hogar con más de 5 años de experiencia. Brindo servicios de calidad con confianza y dedicación.</p>
+                <a href="#contact" class="cta-button">Contáctame Aqui</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title scroll-animate">
+                <h2>Mis Servicios</h2>
+                <p>Ofrezco una amplia gama de servicios profesionales para tu hogar y negocio</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card scroll-animate" data-service="limpieza">
+                    <div class="service-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Limpieza de Casas y Oficinas</h3>
+                    <p>Servicio completo de limpieza profesional para hogares y espacios de trabajo. Atención a cada detalle.</p>
+                </div>
+
+                <div class="service-card scroll-animate" data-service="ninos">
+                    <div class="service-icon">
+                        <i class="fas fa-baby"></i>
+                    </div>
+                    <h3>Cuidado de Niños</h3>
+                    <p>Babysitting profesional con experiencia. Cuidado responsable y actividades educativas para tus hijos.</p>
+                </div>
+
+                <div class="service-card scroll-animate" data-service="ancianos">
+                    <div class="service-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h3>Cuidado de Ancianos</h3>
+                    <p>Acompañamiento y cuidado especializado para personas mayores. Atención personalizada y cariñosa.</p>
+                </div>
+
+                <div class="service-card scroll-animate" data-service="cocina">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Cocina Casera</h3>
+                    <p>Preparación de comidas caseras saludables y deliciosas. Menús personalizados según tus preferencias.</p>
+                </div>
+
+                <div class="service-card scroll-animate" data-service="flyers">
+                    <div class="service-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Distribución de Flyers</h3>
+                    <p>Promoción efectiva de tu negocio mediante distribución profesional de material publicitario.</p>
+                </div>
+
+                <div class="service-card scroll-animate" data-service="lavanderia">
+                    <div class="service-icon">
+                        <i class="fas fa-tshirt"></i>
+                    </div>
+                    <h3>Lavandería y Planchado</h3>
+                    <p>Servicio completo de lavado, secado y planchado de ropa. Tu ropa impecable y lista para usar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+  <!-- Reviews Section Rediseñada -->
+  <section class="reviews-section" id="reviews">
+    <h3><i class="fas fa-star"></i> Customer Reviews</h3>
+    
+    <div class="reviews-container">
+      <div class="reviews">
+        <div class="review-card">
+          <div class="review-header">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Fadolo" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Fadolo</h4>
+              <div class="review-date">2 weeks ago</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>Seen Fadeologyst101 Cutting Hair on Facebook so I came in. Amazing service and great attention to detail. Will definitely come back again!</p>
+            <div class="read-more">Read more</div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-header">
+            <img src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Jmf Paint" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Jmf Paint</h4>
+              <div class="review-date">3 weeks ago</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>Gabe is a great barber. He took his time and gave me exactly what I wanted. The atmosphere here is relaxing and professional.</p>
+            <div class="read-more">Read more</div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-header">
+            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Ghislene Alexis" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Ghislene Alexis</h4>
+              <div class="review-date">1 month ago</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>That was my best experience ever!!! The staff was friendly and the service was exceptional. I highly recommend this place.</p>
+            <div class="read-more">Read more</div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-header">
+            <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Adrienne Roberts" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Adrienne Roberts</h4>
+              <div class="review-date">2 months ago</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>Took my son later in the evening. They accommodated us even though it was near closing time. Excellent service!</p>
+            <div class="read-more">Read more</div>
+          </div>
+        </div>
+        
+        <div class="review-card">
+          <div class="review-header">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&q=80" alt="Jonathan Regis" class="reviewer-avatar">
+            <div class="reviewer-info">
+              <h4>Jonathan Regis</h4>
+              <div class="review-date">3 months ago</div>
+              <div class="stars">★★★★★</div>
+            </div>
+          </div>
+          <div class="review-content">
+            <p>Lucson had been my barber for years. His skills are unmatched and he always makes sure his clients are satisfied.</p>
+            <div class="read-more">Read more</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="reviews-nav">
+        <button class="nav-btn prev-btn"><i class="fas fa-chevron-left"></i></button>
+        <button class="nav-btn next-btn"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-title scroll-animate">
+                <h2>Preguntas Frecuentes</h2>
+                <p>Resuelve tus dudas sobre mis servicios</p>
+            </div>
+
+            <div class="faq-container">
+                <div class="faq-item scroll-animate">
+                    <button class="faq-question">
+                        ¿Qué incluye el servicio de limpieza?
+                        <i class="fas fa-caret-down faq-caret"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>El servicio incluye limpieza completa de todas las habitaciones, baños, cocina, aspirado, trapeado y organización básica de espacios.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <button class="faq-question">
+                        ¿Tienes experiencia con niños?
+                        <i class="fas fa-caret-down faq-caret"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, tengo más de 3 años de experiencia cuidando niños de diferentes edades. Cuento con referencias verificables.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <button class="faq-question">
+                        ¿Trabajas fines de semana?
+                        <i class="fas fa-caret-down faq-caret"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Sí, ofrezco servicios durante la semana y fines de semana. Los horarios se coordinan según disponibilidad.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <button class="faq-question">
+                        ¿Cómo son tus tarifas?
+                        <i class="fas fa-caret-down faq-caret"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Las tarifas varían según el tipo de servicio y duración. Contacta conmigo para recibir una cotización personalizada.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item scroll-animate">
+                    <button class="faq-question">
+                        ¿Traes tus propios materiales de limpieza?
+                        <i class="fas fa-caret-down faq-caret"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Puedo trabajar con tus materiales o traer los míos. Uso productos de calidad y seguros para tu hogar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content scroll-animate">
+                <h2>¡Contáctame!</h2>
+                <p>Estoy lista para ayudarte. Comunícate conmigo para coordinar el servicio que necesitas.</p>
+                
+                <div class="contact-methods">
+                    <div class="contact-method">
+                        <i class="fab fa-whatsapp"></i>
+                        <h3>WhatsApp</h3>
+                        <a href="https://wa.me/1234567890">+1 (234) 567-8900</a>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <a href="mailto:guerlyne@email.com">guerlyne@email.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section footer-contact">
+                <h3>Guerlyne Vital</h3>
+                <p><i class="fas fa-phone"></i> +1 (234) 567-8900</p>
+                <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/1234567890">WhatsApp</a></p>
+                <p><i class="fas fa-envelope"></i> <a href="mailto:guerlyne@email.com">guerlyne@email.com</a></p>
+            </div>
+            
+            <div class="footer-section footer-developer">
+                <h3>Desarrollado por</h3>
+                <p>Tu Nombre</p>
+                <div class="developer-links">
+                    <a href="https://wa.me/tuwhatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://github.com/tugithub" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="mailto:tu@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2024 Guerlyne Vital. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Service Modal -->
+    <div class="modal-overlay" id="serviceModal">
+        <div class="modal-content">
+            <button class="modal-close" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3 class="modal-title" id="modalTitle">Título del Servicio</h3>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <p class="modal-description">Descripción del servicio...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Navigation Toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                const icon = navToggle.querySelector('i');
+                icon.classList.toggle('fa-bars');
+                icon.classList.toggle('fa-times');
+            });
+
+            // Close mobile menu when clicking on a link
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = navToggle.querySelector('i');
+                    icon.classList.add('fa-bars');
+                    icon.classList.remove('fa-times');
+                });
+            });
+        }
+
+        // FAQ Accordion
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const isActive = question.classList.contains('active');
+                
+                // Close all FAQ items
+                faqQuestions.forEach(q => {
+                    q.classList.remove('active');
+                    q.nextElementSibling.classList.remove('active');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    question.classList.add('active');
+                    question.nextElementSibling.classList.add('active');
+                }
+            });
+        });
+
+        // Service Modal
+        const serviceCards = document.querySelectorAll('.service-card');
+        const modal = document.getElementById('serviceModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalBody = document.getElementById('modalBody');
+
+        const serviceData = {
+            limpieza: {
+                title: 'Limpieza de Casas y Oficinas',
+                icon: 'fas fa-home',
+                description: 'Ofrezco un servicio completo de limpieza profesional para mantener tus espacios impecables y saludables. Mi enfoque es meticuloso y detallista, asegurando que cada rincón de tu hogar u oficina quede reluciente.',
+                features: [
+                    'Limpieza profunda de todas las habitaciones',
+                    'Desinfección de baños y cocina',
+                    'Aspirado y trapeado de pisos',
+                    'Limpieza de ventanas y superficies',
+                    'Organización básica de espacios',
+                    'Productos de limpieza ecológicos disponibles'
+                ],
+                pricing: "Desde $50 por sesión (varía según el tamaño del espacio)",
+                details: "Utilizo técnicas profesionales y productos de alta calidad que eliminan gérmenes y alérgenos, creando un ambiente más saludable para ti y tu familia. Mi servicio es flexible y puedo adaptarme a tus horarios y necesidades específicas."
+            },
+            ninos: {
+                title: 'Cuidado de Niños',
+                icon: 'fas fa-baby',
+                description: 'Babysitting profesional con experiencia y dedicación para el bienestar y desarrollo de tus hijos. Soy paciente, cariñosa y responsable, creando un ambiente seguro y divertido para los más pequeños.',
+                features: [
+                    'Cuidado responsable y cariñoso',
+                    'Actividades educativas y recreativas',
+                    'Ayuda con tareas escolares',
+                    'Preparación de comidas saludables',
+                    'Atención a rutinas de sueño',
+                    'Referencias verificables disponibles'
+                ],
+                pricing: "$15-20 por hora (dependiendo del número de niños)",
+                details: "Tengo certificación en primeros auxilios y RCP infantil. Me encanta organizar actividades que estimulen la creatividad y el aprendizaje mientras los padres están fuera. Puedo proporcionar referencias de familias para las que he trabajado anteriormente."
+            },
+            ancianos: {
+                title: 'Cuidado de Ancianos',
+                icon: 'fas fa-user-friends',
+                description: 'Acompañamiento especializado para personas mayores con atención personalizada y cariñosa. Entiendo las necesidades particulares de los adultos mayores y proporciono compañía y asistencia con respeto y dignidad.',
+                features: [
+                    'Compañía y conversación',
+                    'Ayuda con medicamentos',
+                    'Asistencia en actividades diarias',
+                    'Preparación de comidas',
+                    'Acompañamiento a citas médicas',
+                    'Cuidado respetuoso y digno'
+                ],
+                pricing: "Desde $18 por hora (dependiendo de las necesidades específicas)",
+                details: "Mi enfoque es promover la independencia mientras proporciono la asistencia necesaria. Tengo experiencia trabajando con personas que tienen movilidad reducida, demencia y otras condiciones relacionadas con la edad. Siempre trato a mis clientes con el máximo respeto y empatía."
+            },
+            cocina: {
+                title: 'Cocina Casera',
+                icon: 'fas fa-utensils',
+                description: 'Preparación de comidas caseras deliciosas y nutritivas adaptadas a tus gustos y necesidades. Desde platos tradicionales hasta opciones gourmet, siempre usando ingredientes frescos y de calidad.',
+                features: [
+                    'Menús personalizados',
+                    'Comida casera saludable',
+                    'Adaptación a dietas especiales',
+                    'Compra de ingredientes frescos',
+                    'Preparación de porciones familiares',
+                    'Opciones vegetarianas disponibles'
+                ],
+                pricing: "Desde $150 por semana (incluye planificación, compra y preparación)",
+                details: "Puedo adaptarme a cualquier restricción dietética (sin gluten, keto, baja en sodio, etc.) y prefiero usar ingredientes orgánicos y locales cuando sea posible. También ofrezco servicios de catering para eventos pequeños y preparación de comidas para la semana."
+            },
+            flyers: {
+                title: 'Distribución de Flyers',
+                icon: 'fas fa-bullhorn',
+                description: 'Promoción efectiva de tu negocio mediante distribución profesional y estratégica de material publicitario. Llevo tu mensaje directamente a tu audiencia objetivo con eficiencia y profesionalismo.',
+                features: [
+                    'Distribución puerta a puerta',
+                    'Cobertura de zonas específicas',
+                    'Entrega en centros comerciales',
+                    'Reporte de distribución',
+                    'Horarios flexibles',
+                    'Tarifas competitivas'
+                ],
+                pricing: "$100-300 por campaña (dependiendo del alcance y duración)",
+                details: "Utilizo métodos estratégicos para maximizar la visibilidad de tu material. Puedo enfocarme en áreas geográficas específicas o demographics particulares según tus necesidades. Proporciono reportes detallados de la distribución para que puedas medir el alcance de tu campaña."
+            },
+            lavanderia: {
+                title: 'Lavandería y Planchado',
+                icon: 'fas fa-tshirt',
+                description: 'Servicio completo de cuidado de ropa con atención especial a cada prenda para mantenerla en perfecto estado. Desde prendas delicadas hasta ropa de trabajo, todo queda impecable y listo para usar.',
+                features: [
+                    'Lavado con productos de calidad',
+                    'Planchado profesional',
+                    'Cuidado especial de prendas delicadas',
+                    'Servicio de recogida y entrega',
+                    'Tratamiento de manchas',
+                    'Doblado y organización'
+                ],
+                pricing: "$1.50-3.00 por prenda (descuentos por volumen)",
+                details: "Utilizo técnicas profesionales para tratar diferentes tipos de telas y manchas difíciles. Ofrezco servicio de recogida y entrega para mayor comodidad. También proporciono servicios especializados como lavado en seco para prendas delicadas y planchado profesional para camisas y trajes."
+            }
+        };
+
+        serviceCards.forEach(card => {
+            card.addEventListener('click', () => {
+                const serviceType = card.getAttribute('data-service');
+                const service = serviceData[serviceType];
+                
+                if (service) {
+                    modalTitle.textContent = service.title;
+                    modalIcon.innerHTML = `<i class="${service.icon}"></i>`;
+                    
+                    const featuresHTML = service.features.map(feature => 
+                        `<li>${feature}</li>`
+                    ).join('');
+                    
+                    modalBody.innerHTML = `
+                        <p class="modal-description">${service.description}</p>
+                        <p class="modal-details">${service.details}</p>
+                        <ul class="modal-features">
+                            ${featuresHTML}
+                        </ul>
+                        <div class="modal-pricing">
+                            <h4>Información de Precios</h4>
+                            <p>${service.pricing}</p>
+                            <p><em>Precios pueden variar según requisitos específicos</em></p>
+                        </div>
+                        <div class="modal-cta">
+                            <a href="#contact" class="cta-button">Solicitar este servicio</a>
+                        </div>
+                    `;
+                    
+                    modal.classList.add('active');
+                }
+            });
+        });
+
+        // Close modal
+        closeModal.addEventListener('click', () => {
+            modal.classList.remove('active');
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.classList.remove('active');
+            }
+        });
+
+        // Scroll Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate');
+                }
+            });
+        }, observerOptions);
+
+        // Observe all scroll-animate elements
+        document.querySelectorAll('.scroll-animate').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offsetTop = target.offsetTop - 70; // Account for mobile nav height
+                    window.scrollTo({
+                        top: offsetTop,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add loading animation delay
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const heroAnimate = document.querySelector('.hero .animate-in');
+                if (heroAnimate) {
+                    heroAnimate.style.animationDelay = '0.2s';
+                }
+            }, 100);
+        });
+
+        // Funcionalidad para expandir/contraer reseñas
+    document.querySelectorAll('.review-card').forEach(card => {
+      const moreBtn = card.querySelector('.read-more');
+      const text = card.querySelector('p');
+      const originalText = text.textContent;
+
+      if (originalText.length > 120) {
+        text.textContent = originalText.substring(0, 120) + '...';
+        moreBtn.textContent = 'Read more';
+
+        const toggleText = () => {
+          card.classList.toggle('expanded');
+          if (card.classList.contains('expanded')) {
+            text.textContent = originalText;
+            moreBtn.textContent = 'Read less';
+          } else {
+            text.textContent = originalText.substring(0, 120) + '...';
+            moreBtn.textContent = 'Read more';
+          }
+        };
+
+        moreBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggleText();
+        });
+
+        // También permitir expandir haciendo clic en la tarjeta
+        card.addEventListener('click', (e) => {
+          if (e.target !== moreBtn) {
+            toggleText();
+          }
+        });
+      } else {
+        moreBtn.style.display = 'none';
+      }
+    });
+
+    // Navegación entre reviews
+    const reviewsContainer = document.querySelector('.reviews');
+    const prevBtn = document.querySelector('.prev-btn');
+    const nextBtn = document.querySelector('.next-btn');
+
+    nextBtn.addEventListener('click', () => {
+      reviewsContainer.scrollBy({ left: 350, behavior: 'smooth' });
+    });
+
+    prevBtn.addEventListener('click', () => {
+      reviewsContainer.scrollBy({ left: -350, behavior: 'smooth' });
+    });
+    </script>
+</body>
+</html>
