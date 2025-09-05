@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1516715094483-75da7dee9756?q=80&w=1200&auto=format&fit=crop">
   <meta name="theme-color" content="#16a34a">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=1.2.3.3.4.5.6.7.8.9">
+  <link rel="stylesheet" href="styles.css?v=1.0.2.3.4.5.6.7.5.3.2">
 <style>
         :root{
             --primaire:#16a34a;
@@ -813,7 +813,8 @@
         .section-header{text-align:center;margin-bottom:4rem;position:relative;z-index:2}
         .section-subtitle{font-size:.95rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
        
-        .section-title {
+/* ===== Títulos de sección ===== */
+.section-title {
     font-size: clamp(1.8rem, 3vw, 2.8rem);
     margin: 0;
     font-family: 'Prata', serif;
@@ -825,6 +826,7 @@
     text-shadow: 0 0 8px rgba(0, 255, 128, 0.25);
 }
 
+/* Línea decorativa simple debajo del título */
 .section-title::after {
     content: '';
     position: absolute;
@@ -833,21 +835,11 @@
     transform: translateX(-50%);
     width: clamp(120px, 40%, 220px);
     height: 4px;
-    background: linear-gradient(90deg, #00ff88, var(--accent), #00ffcc);
-    background-size: 300% 300%;
-    animation: shine 3s ease-in-out infinite;
+    background-color: #00ff88;
     border-radius: 2px;
 }
 
-@keyframes shine {
-    0%, 100% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-}
-
+/* ===== Descripción de sección ===== */
 .section-description {
     font-size: 1.1rem;
     color: var(--muted);
@@ -857,8 +849,7 @@
     text-align: center;
 }
 
-        
-/* Fuente más convencional y legible */
+/* ===== Cartas de servicio ===== */
 .servicio-card {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(145deg, rgba(255,255,255,.06) 0%, rgba(172, 0, 0, 0.02) 100%);
@@ -870,32 +861,32 @@
     backdrop-filter: blur(12px);
     overflow: hidden;
     cursor: pointer;
-    margin-bottom: 2rem; /* 🔥 más espacio entre cartas */
+    margin-bottom: 2rem; /* espacio entre cartas */
 }
 
-/* Mantengo hover original */
-.servicio-card::before {
-    content: "";
-    position: absolute;
-    top: -100%;
-    left: -30%;
-    width: 60%;
-    height: 250%;
-    transform: rotate(25deg);
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,.25), transparent);
-    opacity: 0;
-    transition: opacity .35s ease, transform .9s ease;
-}
-
+/* Hover limpio sin animaciones de brillo */
 .servicio-card:hover {
     transform: translateY(-8px) scale(1.01);
     border-color: rgba(22,163,74,.35);
     box-shadow: 0 25px 50px rgba(0,0,0,.25);
 }
 
-.servicio-card:hover::before {
-    opacity: 1;
-    transform: rotate(25deg) translateX(140%);
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(120px, 40%, 220px);
+    height: 4px;
+    background: linear-gradient(to top, #00ff88 0%, #004422 100%);
+    background-size: 100% 0%;
+    background-repeat: no-repeat;
+    transition: background-size 0.5s ease;
+}
+
+.section-title:hover::after {
+    background-size: 100% 100%;
 }
 
 /* Icono más atractivo */
@@ -945,6 +936,135 @@
         .servicio-lista li::before{content:'✨';position:absolute;left:0}
         
         .container-services{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+
+        /* Contenido interno de las cartas */
+.contenido-estilo {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Títulos y subtítulos */
+.servicio-titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--white);
+}
+.servicio-subtitulo {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Texto principal */
+.servicio-description {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Lista de características */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.feature-icon {
+  background: var(--accent);
+  color: white;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Bloque de precios */
+.servicio-pricing {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.pricing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.precio-desde {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.precio-unidad {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.precio-badge {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.precio-extra {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Botones de acción */
+.servicio-actions {
+  display: flex;
+  gap: 1rem;
+}
+.btn-primary {
+  flex: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+}
+.btn-secondary {
+  flex: 1;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  border-color: var(--accent);
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--accent);
+}
         
         /* ===== Sección de promoción (estilo barbería) ===== */
         .promocion-section {
@@ -1024,7 +1144,7 @@
         .promo-text p {
             font-size: clamp(0.95rem, 1.1vw, 1.2rem);
             line-height: 1.8;
-            color: #cbffc9;
+            color: #ffffff;
             margin: 0;
             position: relative;
         }
@@ -1341,6 +1461,61 @@
     position: relative;
     z-index: 1;
   }
+
+  .servicios-section {
+    padding: 6rem 0;
+    min-height: 100vh;
+    position: relative;
+    background: url("imagenes/fon4.png") center/cover no-repeat;
+    overflow: hidden; /* asegura que el overlay no se salga */
+}
+
+.servicios-section::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* ocupa todo el contenedor */
+    background: rgba(0, 0, 0, 0.6); /* negro semi-transparente */
+    transition: background 0.3s ease; /* animación suave */
+    z-index: 1;
+}
+
+.servicios-section:hover::before {
+    background: rgba(0, 0, 0, 0.7); /* se oscurece más en hover */
+}
+
+/* Aseguramos que el contenido quede por encima del overlay */
+.servicios-section > * {
+    position: relative;
+    z-index: 2;
+}
+
+.section-tarification {
+    padding: 6rem 0;
+    min-height: 100vh;
+    position: relative;
+    background: url("imagenes/fon4.png") center/cover no-repeat !important;
+    overflow: hidden;
+}
+
+.section-tarification::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6); /* overlay negro */
+    transition: background 0.3s ease;
+    z-index: 1;
+}
+
+.section-tarification:hover::before {
+    background: rgba(0, 0, 0, 0.8); /* más oscuro en hover */
+}
+
+.section-tarification > * {
+    position: relative;
+    z-index: 2; /* asegura que el contenido quede arriba del overlay */
+}
+
+
   </style>
 </head>
 <body class="bg-gray-900">
@@ -1478,93 +1653,120 @@
         </div>
     </section>
 
-    <!-- Sección de servicios (desde services.html) -->
-    <section id="servicios" class="servicios-section">
-        <div class="container-services">
-            <!-- Header -->
-            <div class="section-header">
-                <div class="section-subtitle">Mis <strong>3</strong> Servicios</div>
-                <h2 class="section-title">Soluciones Profesionales</h2>
+    <!-- Sección de servicios -->
+<section class="servicios-section">
+  <div class="container-services">
+    <!-- Header -->
+    <div class="section-header">
+      <div class="section-subtitle" id="servicios">Mis <strong>2</strong> Servicios</div>
+      <h2 class="section-title">Soluciones Profesionales</h2>
+    </div>
+
+    <!-- Grid principal -->
+    <div class="servicios-grid">
+
+      <!-- 1) Limpieza profesional -->
+      <article class="servicio-card" data-card id="servicios1">
+        <div class="servicio-icon" aria-hidden="true"><i class="fa-solid fa-house"></i></div>
+        <h3>Limpieza de Casas y Oficinas</h3>
+        <p>Servicio cuidadoso por Guerlyne Vital, para que tu casa o tu oficina se mantenga limpia y agradable.</p>
+
+        <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-1">
+          <span>Ver más</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
+
+        <div id="detalles-1" class="servicio-detalles" role="region" aria-label="Detalles limpieza">
+          <div class="servicio-detalles-inner contenido-estilo">
+            <div class="servicio-header">
+              <h4 class="servicio-titulo">Limpieza Profesional</h4>
+              <span class="servicio-subtitulo">Hogar & Oficina ✓</span>
             </div>
 
-            <!-- Grid principal -->
-            <div class="servicios-grid">
-                <!-- 1) Limpieza profesional (con despliegue inline) -->
-                <article class="servicio-card" data-card id="servicios1">
-                    <div class="servicio-icon" id="" aria-hidden="true"><i class="fa-solid fa-house"></i></div>
-                    <h3>Limpieza de Casas y Oficinas</h3>
-                    <p>Servicio cuidadoso por Guerlyne Vital, para que tu casa o tu oficina se mantenga limpia y agradable.</p>
-                    <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-1">
-                        <span>Ver más</span>
-                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <div id="detalles-1" class="servicio-detalles" role="region" aria-label="Detalles limpieza">
-                        <div class="servicio-detalles-inner">
-                            <p class="servicio-intro">
-                                Yo vengo personalmente a tu hogar u oficina para ocuparme de cada rincón.
-                            </p>
-                            <ul class="servicio-lista">
-                                <li>Limpieza completa: cocina, baños, ventanas y pisos</li>
-                                <li>Aspirado y trapeado profundo con atención a los detalles</li>
-                                <li>Productos seguros para niños y mascotas</li>
-                                <li>Opcional: organización básica de espacios y lavandería (lavado y planchado)</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
+            <p class="servicio-description">
+              Atención detallada y productos seguros para un ambiente limpio y saludable.
+            </p>
 
-                <!-- 2) Cuidado de niños (con despliegue inline) -->
-                <article class="servicio-card" data-card id="servicios2">
-                    <div class="servicio-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
-                    <h3>Cuidado de Niños</h3>
-                    <p>Atención amorosa y responsable. Rutinas, juegos didácticos, apoyo con tareas y reportes para padres.</p>
-                    <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-2">
-                        <span>Ver más</span>
-                        <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-                    </button>
-                    <div id="detalles-2" class="servicio-detalles" role="region" aria-label="Detalles cuidado de niños">
-                        <div class="servicio-detalles-inner">
-                            <ul class="servicio-lista">
-                                <li>Experiencia con bebés y niños en edad escolar</li>
-                                <li>Juegos, lectura, actividades creativas</li>
-                                <li>Apoyo básico en tareas y meriendas</li>
-                                <li>Actualizaciones por messaje a los padres</li>
-                            </ul>
-                        </div>
-                    </div>
-                </article>
+            <div class="features-grid">
+              <div class="feature-item"><span class="feature-icon">✓</span>Limpieza completa: cocina, baños, ventanas y pisos</div>
+              <div class="feature-item"><span class="feature-icon">✓</span>Aspirado y trapeado profundo</div>
+              <div class="feature-item"><span class="feature-icon">✓</span>Productos seguros para niños y mascotas</div>
+              <div class="feature-item"><span class="feature-icon">✓</span>Opcional: organización básica de espacios y lavandería</div>
             </div>
+
+            <div class="servicio-pricing">
+              <div class="pricing-header">
+                <div class="precio-desde">$20 <span class="precio-unidad">/ hora</span></div>
+                <span class="precio-badge">Confiable</span>
+              </div>
+              <div class="precio-extra">Tarifas especiales para clientes frecuentes</div>
+            </div>
+
+            <div class="servicio-actions">
+              <a href="#contacto" class="btn-primary">Contactar Ahora</a>
+              <a href="#mas-info" class="btn-secondary">Más Información</a>
+            </div>
+            <p class="note-prix">
+            * Precios pueden variar según la ubicación, frecuencia y requisitos específicos. 
+            <a href="#contacto" style="color: var(--accent); text-decoration: underline;">Contáctame</a> para una cotización personalizada.
+          </p>
+          </div>
         </div>
-    </section>
+      </article>
 
-    <!-- ======= SECTION PROMO ======= -->
-    <section class="promocion-section" aria-labelledby="promo-heading">
-        <div class="overlay-verde" aria-hidden="true"></div>
+      <!-- 2) Cuidado de niños -->
+      <article class="servicio-card" data-card id="servicios2">
+        <div class="servicio-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+        <h3>Cuidado Infantil – Apoyo a Padres</h3>
+        <p>Ofrezco apoyo y cuidado responsable para que los padres puedan disponer de unas horas para su trabajo, su pareja o su descanso cuando lo necesiten</p>
 
-        <div class="limitar-ancho">
-            <div class="contenedor-promo" id="promocion">
-                <!-- Columna izquierda: Título -->
-                <div class="promo-title">
-                    <p class="etiqueta">Servicio Premium</p>
-                    <h2 id="promo-heading" class="titulo-seccion">Promoción de tu negocio</h2>
-                </div>
+        <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-2">
+          <span>Ver más</span>
+          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+        </button>
 
-                <!-- Texto descriptivo -->
-                <div class="promo-text">
-                    <p>
-                        Lleva tu negocio a los bolsillos de tus clientes. Soy Guerlyne Vital y ayudo a que tu negocio gane más visibilidad. Distribuyo personalmente cartas de presentación elegantes de tu negocio y además puedo proporcionarte un sitio web profesional para que tus clientes también te encuentren en línea mediante las cartas distribuidas.
-                    </p>
-                </div>
-
-                <!-- Botón -->
-                <div class="promo-button">
-                    <button class="btn-promo" id="open-sheet" aria-expanded="false" aria-controls="sheet">
-                        Conoce más detalles
-                    </button>
-                </div>
+        <div id="detalles-2" class="servicio-detalles" role="region" aria-label="Detalles cuidado de niños">
+          <div class="servicio-detalles-inner contenido-estilo">
+            <div class="servicio-header">
+              <h4 class="servicio-titulo">Cuidado Infantil</h4>
+              <span class="servicio-subtitulo">Apoyo a Padres ✓</span>
             </div>
+
+            <p class="servicio-description">
+              Servicio confiable, pensado para liberar tiempo a los padres y brindar
+              un entorno seguro y afectuoso a los niños pequeños.
+            </p>
+
+            <div class="features-grid">
+              <div class="feature-item"><span class="feature-icon">✓</span>Experiencia con bebés y niños en edad escolar</div>
+              <div class="feature-item"><span class="feature-icon">✓</span>Juegos y actividades creativas</div>
+              <div class="feature-item"><span class="feature-icon">✓</span>Apoyo básico en meriendas y rutinas</div>
+              <div class="feature-item"><span class="feature-icon">✓</span>Reportes y mensajes para mantener a los padres tranquilos</div>
+            </div>
+
+            <div class="servicio-pricing">
+              <div class="pricing-header">
+                <div class="precio-desde">$18 <span class="precio-unidad">/ hora</span></div>
+                <span class="precio-badge">Confiable</span>
+              </div>
+              <div class="precio-extra">Tarifas especiales para servicios frecuentes</div>
+            </div>
+
+            <div class="servicio-actions">
+              <a href="#contacto" class="btn-primary">Contactar Ahora</a>
+              <a href="#mas-info" class="btn-secondary">Más Información</a>
+            </div>
+            <p class="note-prix">
+            * Precios pueden variar según la ubicación, frecuencia y requisitos específicos. 
+            <a href="#contacto" style="color: var(--accent); text-decoration: underline;">Contáctame</a> para una cotización personalizada.
+          </p>
+          </div>
         </div>
-    </section>
+      </article>
+
+    </div>
+  </div>
+</section>
 
   <!-- Tarifas - MEJORADO -->
   <section id="tarifas" class="section alternative section-tarification">
@@ -2012,6 +2214,6 @@
 
     animate();
   </script>
+  <script src="scripts.js"></script>
 </body>
 </html>
-
