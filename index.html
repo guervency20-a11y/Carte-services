@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1516715094483-75da7dee9756?q=80&w=1200&auto=format&fit=crop">
   <meta name="theme-color" content="#16a34a">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=1.5.3.4.3">
+  <link rel="stylesheet" href="style.css?v=1.0.4.5.6.7.7.7.7.7.7">
 <style>
         :root{
             --primaire:#16a34a;
@@ -813,8 +813,7 @@
         .section-header{text-align:center;margin-bottom:4rem;position:relative;z-index:2}
         .section-subtitle{font-size:.95rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
        
-/* ===== Títulos de sección ===== */
-.section-title {
+        .section-title {
     font-size: clamp(1.8rem, 3vw, 2.8rem);
     margin: 0;
     font-family: 'Prata', serif;
@@ -826,7 +825,6 @@
     text-shadow: 0 0 8px rgba(0, 255, 128, 0.25);
 }
 
-/* Línea decorativa simple debajo del título */
 .section-title::after {
     content: '';
     position: absolute;
@@ -835,11 +833,21 @@
     transform: translateX(-50%);
     width: clamp(120px, 40%, 220px);
     height: 4px;
-    background-color: #00ff88;
+    background: linear-gradient(90deg, #00ff88, var(--accent), #00ffcc);
+    background-size: 300% 300%;
+    animation: shine 3s ease-in-out infinite;
     border-radius: 2px;
 }
 
-/* ===== Descripción de sección ===== */
+@keyframes shine {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+}
+
 .section-description {
     font-size: 1.1rem;
     color: var(--muted);
@@ -849,7 +857,8 @@
     text-align: center;
 }
 
-/* ===== Cartas de servicio ===== */
+        
+/* Fuente más convencional y legible */
 .servicio-card {
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(145deg, rgba(255,255,255,.06) 0%, rgba(172, 0, 0, 0.02) 100%);
@@ -861,32 +870,19 @@
     backdrop-filter: blur(12px);
     overflow: hidden;
     cursor: pointer;
-    margin-bottom: 2rem; /* espacio entre cartas */
+    margin-bottom: 2rem; /* 🔥 más espacio entre cartas */
 }
 
-/* Hover limpio sin animaciones de brillo */
+/* Mantengo hover original */
 .servicio-card:hover {
     transform: translateY(-8px) scale(1.01);
     border-color: rgba(22,163,74,.35);
     box-shadow: 0 25px 50px rgba(0,0,0,.25);
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(120px, 40%, 220px);
-    height: 4px;
-    background: linear-gradient(to top, #00ff88 0%, #004422 100%);
-    background-size: 100% 0%;
-    background-repeat: no-repeat;
-    transition: background-size 0.5s ease;
-}
-
-.section-title:hover::after {
-    background-size: 100% 100%;
+.servicio-card:hover::before {
+    opacity: 1;
+    transform: rotate(25deg) translateX(140%);
 }
 
 /* Icono más atractivo */
@@ -936,135 +932,6 @@
         .servicio-lista li::before{content:'✨';position:absolute;left:0}
         
         .container-services{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-
-        /* Contenido interno de las cartas */
-.contenido-estilo {
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-/* Títulos y subtítulos */
-.servicio-titulo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0;
-  color: var(--white);
-}
-.servicio-subtitulo {
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-/* Texto principal */
-.servicio-description {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
-
-/* Lista de características */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.8rem;
-}
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-.feature-icon {
-  background: var(--accent);
-  color: white;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-/* Bloque de precios */
-.servicio-pricing {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1rem;
-}
-.pricing-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-.precio-desde {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-.precio-unidad {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-.precio-badge {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-.precio-extra {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
-
-/* Botones de acción */
-.servicio-actions {
-  display: flex;
-  gap: 1rem;
-}
-.btn-primary {
-  flex: 1;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
-}
-.btn-secondary {
-  flex: 1;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: var(--white);
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn-secondary:hover {
-  border-color: var(--accent);
-  background: rgba(0, 255, 136, 0.1);
-  color: var(--accent);
-}
         
         /* ===== Sección de promoción (estilo barbería) ===== */
         .promocion-section {
@@ -1144,7 +1011,7 @@
         .promo-text p {
             font-size: clamp(0.95rem, 1.1vw, 1.2rem);
             line-height: 1.8;
-            color: #ffffff;
+            color: #cbffc9;
             margin: 0;
             position: relative;
         }
@@ -1462,7 +1329,7 @@
     z-index: 1;
   }
 
-  .servicios-section {
+    .servicios-section {
     padding: 6rem 0;
     min-height: 100vh;
     position: relative;
@@ -1493,7 +1360,7 @@
     padding: 6rem 0;
     min-height: 100vh;
     position: relative;
-    background: url("imagenes/fon4.png") center/cover no-repeat !important;
+    background: url("fon4.png") center/cover no-repeat !important;
     overflow: hidden;
 }
 
@@ -1515,7 +1382,134 @@
     z-index: 2; /* asegura que el contenido quede arriba del overlay */
 }
 
+        /* Contenido interno de las cartas */
+.contenido-estilo {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
 
+/* Títulos y subtítulos */
+.servicio-titulo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  color: var(--white);
+}
+.servicio-subtitulo {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Texto principal */
+.servicio-description {
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* Lista de características */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.8rem;
+}
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.feature-icon {
+  background: var(--accent);
+  color: white;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Bloque de precios */
+.servicio-pricing {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+}
+.pricing-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+.precio-desde {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.precio-unidad {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.precio-badge {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+.precio-extra {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+/* Botones de acción */
+.servicio-actions {
+  display: flex;
+  gap: 1rem;
+}
+.btn-primary {
+  flex: 1;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+}
+.btn-secondary {
+  flex: 1;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  padding: 12px 20px;
+  border-radius: 10px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  border-color: var(--accent);
+  background: rgba(0, 255, 136, 0.1);
+  color: var(--accent);
+}
   </style>
 </head>
 <body class="bg-gray-900">
@@ -1653,7 +1647,7 @@
         </div>
     </section>
 
-    <!-- Sección de servicios -->
+        <!-- Sección de servicios -->
 <section class="servicios-section">
   <div class="container-services">
     <!-- Header -->
@@ -1767,6 +1761,35 @@
     </div>
   </div>
 </section>
+
+    <!-- ======= SECTION PROMO ======= -->
+    <section class="promocion-section" aria-labelledby="promo-heading">
+        <div class="overlay-verde" aria-hidden="true"></div>
+
+        <div class="limitar-ancho">
+            <div class="contenedor-promo" id="promocion">
+                <!-- Columna izquierda: Título -->
+                <div class="promo-title">
+                    <p class="etiqueta">Servicio Premium</p>
+                    <h2 id="promo-heading" class="titulo-seccion">Promoción de tu negocio</h2>
+                </div>
+
+                <!-- Texto descriptivo -->
+                <div class="promo-text">
+                    <p>
+                        Lleva tu negocio a los bolsillos de tus clientes. Soy Guerlyne Vital y ayudo a que tu negocio gane más visibilidad. Distribuyo personalmente cartas de presentación elegantes de tu negocio y además puedo proporcionarte un sitio web profesional para que tus clientes también te encuentren en línea mediante las cartas distribuidas.
+                    </p>
+                </div>
+
+                <!-- Botón -->
+                <div class="promo-button">
+                    <button class="btn-promo" id="open-sheet" aria-expanded="false" aria-controls="sheet">
+                        Conoce más detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
   <!-- Tarifas - MEJORADO -->
   <section id="tarifas" class="section alternative section-tarification">
@@ -1914,61 +1937,6 @@
         </div>
     </div>
 </aside>
-
-<!-- SECCIÓN DEL REPRODUCTOR DE AUDIO (añadir al final del body) -->
-    <div class="audio-player-container">
-        <!-- Botón de siguiente audio -->
-        <div class="next-audio-btn-container" id="next-audio-container">
-            <button class="next-audio-btn" id="next-audio-btn">Siguiente Audio →</button>
-        </div>
-        
-        <div class="audio-player">
-            <!-- Indicador de sección (NUEVO) -->
-            <div class="section-indicator" id="section-indicator">
-                <i class="fas fa-headphones"></i>
-                <span id="section-text">Seleccionar</span>
-            </div>
-
-            <!-- Información de la pista -->
-            <div class="track-info">
-                <div class="track-title" id="track-title">Selecciona un audio</div>
-            </div>
-
-            <!-- Barra de progreso -->
-            <div class="audio-progress-container">
-                <input type="range" class="audio-progress-bar" id="audio-progress" value="0" min="0" max="100">
-            </div>
-
-            <!-- Tiempos -->
-            <div class="audio-time">
-                <span id="audio-current">0:00</span> / <span id="audio-duration">0:00</span>
-            </div>
-
-            <!-- Controles principales -->
-            <div class="audio-controls">
-                <button class="audio-btn" id="audio-prev" title="Anterior">⏮</button>
-                <button class="audio-btn play-pause" id="audio-play" title="Reproducir">▶</button>
-                <button class="audio-btn play-pause" id="audio-pause" title="Pausar" style="display:none;">⏸</button>
-                <button class="audio-btn" id="audio-next" title="Siguiente">⏭</button>
-            </div>
-
-            <!-- Botón de salto de silencio -->
-            <button class="jump-silence-btn" id="jump-silence" title="Saltar silencio">skip intro</button>
-
-            <!-- Lista de audios (oculta) - MODIFICA ESTOS ENLACES SEGÚN TUS PÁGINAS -->
-            <ul id="audio-list" class="audio-list">
-                <li>
-                    <a href="services.html#servicios1" data-src="Fresh-not-stress.mp3" data-skip="0" data-section="Limpieza">Limpieza profesional</a>
-                </li>
-                <li>
-                    <a href="services.html#servicios2" data-src="mens.mp3" data-skip="0" data-section="Babysitting">Cuidado de niños</a>
-                </li>
-                <li>
-                    <a href="services.html#promocion" data-src="services.mp3" data-skip="4" data-section="Publicidad">Promoción de negocios</a>
-                </li>
-            </ul>
-        </div>
-    </div>
 
 <!-- Canvas para partículas (desde services.html) -->
 <canvas id="particles"></canvas>
@@ -2214,7 +2182,6 @@
 
     animate();
   </script>
-  <script src="scripts.js"></script>
+<script src="scripts.js"></script>
 </body>
 </html>
-
