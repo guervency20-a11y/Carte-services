@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1516715094483-75da7dee9756?q=80&w=1200&auto=format&fit=crop">
   <meta name="theme-color" content="#16a34a">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="style.css?v=1.0.4.5.6.7.7.7.7.7.7">
+  <link rel="stylesheet" href="styles.css?v=7.7.7.7.7.7">
 <style>
         :root{
             --primaire:#16a34a;
@@ -107,6 +107,19 @@
             animation: flotter 6s ease-in-out infinite;
         }
    
+        /* Ajuste solo para los badges en móvil */
+@media (max-width: 640px) {
+  .grid.grid-cols-1.sm\:grid-cols-3 {
+    display: flex;
+    flex-direction: row;
+    gap: 0.75rem; /* espacio entre badges */
+  }
+
+  .grid.grid-cols-1.sm\:grid-cols-3 > .badge-confiance {
+    flex: 1 1 0; /* las dos badges ocupan espacio igual */
+  }
+}
+
 /* ====== En-tête ====== */
 .en-tête-site {
   position: fixed;
@@ -1510,6 +1523,57 @@
   background: rgba(0, 255, 136, 0.1);
   color: var(--accent);
 }
+
+.boton-whatsapp-mini {
+  position: fixed;
+  bottom: 60px;  /* sobre el audio */
+  right: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  background: linear-gradient(135deg, #25D366, #1ebe57);
+  color: white;
+  font-weight: 600;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+  text-decoration: none;
+  z-index: 1000;
+  overflow: hidden;
+  width: 30px;  /* ancho inicial solo con el icono */
+  transition: width 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover o foco: se despliega mostrando texto */
+.boton-whatsapp-mini:hover,
+.boton-whatsapp-mini:focus {
+  width: 140px; /* ancho suficiente para texto */
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.boton-whatsapp-mini i {
+  font-size: 24px;
+  flex-shrink: 0;
+  margin-left: -4px;
+}
+
+.boton-whatsapp-mini span {
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Mostrar texto al desplegar */
+.boton-whatsapp-mini:hover span,
+.boton-whatsapp-mini:focus span {
+  opacity: 1;
+}
+/* Icono dentro */
+.boton-whatsapp-desplegable i {
+  font-size: 24px;
+}
   </style>
 </head>
 <body class="bg-gray-900">
@@ -1584,13 +1648,8 @@
                     
                     <!-- CTA Buttons -->
                     <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="https://wa.me/1234567890?text=Hola%20Guerlyne%2C%20quiero%20cotizar%20un%20servicio" 
-                           class="btn-primaire inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300 group">
-                            <i class="fab fa-whatsapp text-xl mr-3 group-hover:scale-110 transition-transform"></i>
-                            Reservar por WhatsApp
-                        </a>
                         <a href="#servicios" 
-                           class="btn-fantome inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300">
+                           class="btn-primaire inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300 group">
                             Ver servicios
                             <i class="fas fa-arrow-right ml-3"></i>
                         </a>
@@ -1646,6 +1705,8 @@
             </div>
         </div>
     </section>
+
+    
 
         <!-- Sección de servicios -->
 <section class="servicios-section">
@@ -1938,6 +1999,67 @@
     </div>
 </aside>
 
+<!-- SECCIÓN DEL REPRODUCTOR DE AUDIO (añadir al final del body) -->
+    <div class="audio-player-container">
+        <!-- Botón de siguiente audio -->
+        <div class="next-audio-btn-container" id="next-audio-container">
+            <button class="next-audio-btn" id="next-audio-btn">Siguiente Audio →</button>
+        </div>
+        
+        <div class="audio-player">
+            <!-- Indicador de sección (NUEVO) -->
+            <div class="section-indicator" id="section-indicator">
+                <i class="fas fa-headphones"></i>
+                <span id="section-text">Seleccionar</span>
+            </div>
+
+            <!-- Información de la pista -->
+            <div class="track-info">
+                <div class="track-title" id="track-title">Selecciona un audio</div>
+            </div>
+
+            <!-- Barra de progreso -->
+            <div class="audio-progress-container">
+                <input type="range" class="audio-progress-bar" id="audio-progress" value="0" min="0" max="100">
+            </div>
+
+            <!-- Tiempos -->
+            <div class="audio-time">
+                <span id="audio-current">0:00</span> / <span id="audio-duration">0:00</span>
+            </div>
+
+            <!-- Controles principales -->
+            <div class="audio-controls">
+                <button class="audio-btn" id="audio-prev" title="Anterior">⏮</button>
+                <button class="audio-btn play-pause" id="audio-play" title="Reproducir">▶</button>
+                <button class="audio-btn play-pause" id="audio-pause" title="Pausar" style="display:none;">⏸</button>
+                <button class="audio-btn" id="audio-next" title="Siguiente">⏭</button>
+            </div>
+
+            <!-- Botón de salto de silencio -->
+            <button class="jump-silence-btn" id="jump-silence" title="Saltar silencio">skip intro</button>
+
+            <!-- Lista de audios (oculta) - MODIFICA ESTOS ENLACES SEGÚN TUS PÁGINAS -->
+            <ul id="audio-list" class="audio-list">
+                <li>
+                    <a href="services.html#servicios1" data-src="Fresh-not-stress.mp3" data-skip="0" data-section="Limpieza">Limpieza profesional</a>
+                </li>
+                <li>
+                    <a href="services.html#servicios2" data-src="mens.mp3" data-skip="0" data-section="Babysitting">Cuidado de niños</a>
+                </li>
+                <li>
+                    <a href="services.html#promocion" data-src="services.mp3" data-skip="4" data-section="Publicidad">Promoción de negocios</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <a href="https://wa.me/1234567890" target="_blank" class="boton-whatsapp-mini">
+  <i class="fab fa-whatsapp"></i>
+  <span>WhatsApp</span>
+</a>
+
+
 <!-- Canvas para partículas (desde services.html) -->
 <canvas id="particles"></canvas>
 
@@ -2182,6 +2304,7 @@
 
     animate();
   </script>
-<script src="scripts.js"></script>
+  <script src="scripts.js"></script>
+
 </body>
 </html>
