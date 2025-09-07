@@ -1,0 +1,363 @@
+    /* CONTENEDOR PRINCIPAL MEJORADO */
+    .conteneur {
+      width: min(1200px, 95%);
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    
+    /* SECCIÓN DE RESEÑAS - ESTILOS MEJORADOS */
+    .reviews-section-guerlyne {
+      padding: 4rem 0;
+      margin: 2rem auto;
+      position: relative;
+    }
+    
+    .reviews-section-guerlyne h2 {
+      font-family: 'Prata', serif;
+      font-size: 2.2rem;
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      justify-content: center;
+      color: var(--blanc);
+      margin-bottom: 0.6rem;
+      position: relative;
+      font-weight: 600;
+      text-align: center;
+    }
+    
+    .reviews-section-guerlyne h2::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: -10px;
+      width: 84px;
+      height: 4px;
+      border-radius: 4px;
+      background: linear-gradient(90deg, var(--primaire), var(--primaire-2));
+      box-shadow: 0 6px 18px rgba(34,197,94,0.08);
+    }
+    
+    .reviews-subtitle {
+      text-align: center;
+      color: var(--attenue);
+      margin-bottom: 2.5rem;
+      font-weight: 300;
+      font-size: 1.05rem;
+    }
+    
+    /* CONTENEDOR DE RESEÑAS */
+    .reviews-container-guerlyne {
+      position: relative;
+      overflow: hidden;
+      border-radius: 18px;
+      padding: 1.5rem 0;
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+    
+    /* INDICADOR DE SCROLL */
+    .reviews-scroll-indicator {
+      height: 6px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 6px;
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .scroll-progress {
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, var(--primaire), var(--primaire-2));
+      transition: width 0.28s ease;
+    }
+    
+    /* CONTENEDOR DE TARJETAS */
+    .reviews-guerlyne {
+      display: flex;
+      gap: 1.5rem;
+      overflow-x: auto;
+      padding: 1rem 1.5rem 2rem;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    
+    .reviews-guerlyne::-webkit-scrollbar {
+      display: none;
+    }
+    
+    /* TARJETAS INDIVIDUALES - ESTILOS MEJORADOS */
+    .review-card-guerlyne {
+      --card-w: 320px;
+      min-width: var(--card-w);
+      max-width: var(--card-w);
+      background: var(--carte);
+      padding: 1.8rem;
+      border-radius: 16px;
+      position: relative;
+      scroll-snap-align: start;
+      border: 1px solid var(--glass-border);
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow-soft);
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    
+    .review-card-guerlyne::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--primaire), transparent);
+      opacity: 0;
+      transition: opacity 0.28s ease;
+    }
+    
+    .review-card-guerlyne:hover::before {
+      opacity: 1;
+    }
+    
+    .review-card-guerlyne:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-glow);
+      border-color: rgba(34,197,94,0.12);
+      background: linear-gradient(180deg, rgba(255,255,255,0.025), rgba(255,255,255,0.015));
+    }
+    
+    /* ICONO DE CITA */
+    .review-quote-icon {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      font-size: 1.5rem;
+      color: var(--accent);
+      opacity: 0.16;
+      pointer-events: none;
+    }
+    
+    /* HEADER DE LA RESEÑA */
+    .review-header-guerlyne {
+      display: flex;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .reviewer-avatar-guerlyne {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: linear-gradient(45deg, var(--primaire), var(--primaire-2));
+      border: 2px solid rgba(255,255,255,0.03);
+      transition: transform 0.28s ease, filter 0.28s ease;
+      filter: brightness(0.98);
+    }
+    
+    .review-card-guerlyne:hover .reviewer-avatar-guerlyne {
+      transform: scale(1.06);
+      filter: brightness(1.08);
+    }
+    
+    .reviewer-info-guerlyne h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.2rem;
+      color: var(--blanc);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    
+    .review-meta-guerlyne {
+      display: flex;
+      gap: 0.6rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    
+    .review-date-guerlyne {
+      font-size: 0.8rem;
+      color: var(--attenue);
+    }
+    
+    .stars-guerlyne {
+      font-size: 0.95rem;
+      color: var(--primaire-2);
+      filter: drop-shadow(0 6px 18px rgba(34,197,94,0.08));
+      letter-spacing: 0.6px;
+    }
+    
+    /* CONTENIDO DE LA RESEÑA */
+    .review-content-guerlyne {
+      position: relative;
+      z-index: 1;
+    }
+    
+    .review-card-guerlyne p {
+      color: var(--attenue);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+      transition: var(--transition);
+      max-height: 4.8em; /* ~3 líneas */
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .review-card-guerlyne.expanded p {
+      max-height: 500px; /* Suficiente para todo el contenido */
+    }
+    
+    .review-card-guerlyne p::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 38px;
+      background: linear-gradient(180deg, rgba(0,0,0,0), var(--carte));
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+    
+    .review-card-guerlyne.expanded p::after {
+      opacity: 0;
+    }
+    
+    /* BOTÓN LEER MÁS */
+    .read-more-guerlyne {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-top: 0.9rem;
+      padding: 0.4rem 0.8rem;
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      color: var(--primaire-2);
+      border: 1px solid rgba(34,197,94,0.12);
+      font-weight: 600;
+      font-size: 0.8rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+    
+    .read-more-guerlyne:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(34,197,94,0.06);
+      background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+    }
+    
+    .read-more-guerlyne i {
+      font-size: 0.75rem;
+      transition: transform 0.28s ease;
+    }
+    
+    .read-more-guerlyne.expanded i {
+      transform: rotate(180deg);
+    }
+    
+    /* NAVEGACIÓN */
+    .reviews-nav-guerlyne {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    
+    .nav-btn-guerlyne {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.04);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: var(--attenue);
+      cursor: pointer;
+      transition: var(--transition);
+      backdrop-filter: blur(6px);
+    }
+    
+    .nav-btn-guerlyne:hover {
+      background: linear-gradient(180deg, var(--primaire), var(--primaire-2));
+      color: var(--blanc);
+      transform: scale(1.06);
+      box-shadow: 0 8px 28px rgba(34,197,94,0.12);
+      border-color: rgba(255,255,255,0.02);
+    }
+    
+    .nav-dots {
+      display: flex;
+      gap: 0.6rem;
+    }
+    
+    .nav-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.06);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+    
+    .nav-dot.active {
+      background: var(--accent);
+      transform: scale(1.2);
+      box-shadow: 0 0 10px rgba(34,197,94,0.08);
+    }
+    
+    /* RESPONSIVO */
+    @media (max-width: 768px) {
+      .reviews-section-guerlyne {
+        padding: 3rem 0;
+      }
+      
+      .reviews-section-guerlyne h2 {
+        font-size: 1.8rem;
+      }
+      
+      .review-card-guerlyne {
+        min-width: 280px;
+        max-width: 280px;
+        padding: 1.4rem;
+        border-radius: 14px;
+      }
+      
+      .reviewer-avatar-guerlyne {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .reviews-guerlyne {
+        padding: 1rem 1rem 1.5rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .review-card-guerlyne {
+        min-width: 260px;
+        max-width: 260px;
+        padding: 1.2rem;
+      }
+      
+      .reviewer-avatar-guerlyne {
+        width: 46px;
+        height: 46px;
+      }
+      
+      .reviews-nav-guerlyne {
+        margin-top: 1.5rem;
+      }
+    }
