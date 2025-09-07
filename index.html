@@ -10,7 +10,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Prata&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
-
+  
+  <!-- AOS Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
   <!-- Open Graph -->
   <meta property="og:title" content="Guerlyne Vital — Servicios Profesionales">
   <meta property="og:description" content="Limpieza, cuidado y hogar con calidad, confianza y dedicación.">
@@ -18,282 +21,282 @@
   <meta property="og:image" content="https://images.unsplash.com/photo-1516715094483-75da7dee9756?q=80&w=1200&auto=format&fit=crop">
   <meta name="theme-color" content="#16a34a">
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="styles.css?v=1.1.1.1.1.1.7.7">
+  <link rel="stylesheet" href="styles.css?v=1.1.3.4.4.5.5.6">
   <link rel="stylesheet" href="style2.css">
-<style>
-        :root{
-            --primaire:#16a34a;
-            --primaire-2:#10b981;
-            --accent:#34d399;
-            --arriere-plan:#0b0f0e;
-            --surface: #0f1513;
-            --carte:#111a17;
-            --texte:#e7f2ec;
-            --attenue:#a6b7b0;
-            --blanc:#fff;
-            --ombre: 0 10px 30px rgba(16,185,129,.12);
-        }
-        
-        body{
-            font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
-            color:var(--texte);
-            background: 
-                radial-gradient(1200px 600px at 120% -20%, rgba(20,160,120,.25), transparent 50%), 
-                radial-gradient(800px 400px at -20% 20%, rgba(10,150,120,.2), transparent 55%), 
-                linear-gradient(180deg,#0b0f0e 0%, #0c1210 50%, #0b0f0e 100%);
-            background-attachment: fixed;
-        }
-        
-        .texte-degrade{
-            background:linear-gradient(135deg,var(--accent),#9ae6b4);
-            -webkit-background-clip:text;
-            background-clip:text;
-            color:transparent;
-        }
-        
-        .verre{
-            background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.06));
-            border:1px solid rgba(255,255,255,.12);
-            box-shadow:var(--ombre);
-            backdrop-filter: blur(10px);
-        }
-        
-        .superposition-hero {
-            background: 
-                linear-gradient(135deg, rgba(11,15,14,0.8) 0%, rgba(15,21,19,0.6) 100%),
-                radial-gradient(ellipse at top left, rgba(22,163,74,0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom right, rgba(16,185,129,0.1) 0%, transparent 50%);
-        }
-        
-        .btn-primaire {
-            background: linear-gradient(135deg, var(--primaire), var(--primaire-2));
-            border: none;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primaire:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-        }
-        
-        .btn-fantome {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.2);
-            backdrop-filter: blur(10px);
-        }
-        
-        .btn-fantome:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: rgba(22,163,74,0.5);
-        }
-        
-        .badge-confiance {
-            background: rgba(22,163,74,0.1);
-            border: 1px solid rgba(22,163,74,0.2);
-        }
-        
-        .carte-profil {
-            background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-            border: 1px solid rgba(255,255,255,0.15);
-            backdrop-filter: blur(15px);
-        }
-        
-        @keyframes flotter {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .flottant {
-            animation: flotter 6s ease-in-out infinite;
-        }
-   
-        /* Ajuste solo para los badges en móvil */
-@media (max-width: 640px) {
-  .grid.grid-cols-1.sm\:grid-cols-3 {
-    display: flex;
-    flex-direction: row;
-    gap: 0.75rem; /* espacio entre badges */
-  }
+  <style>
+    :root{
+      --primaire:#16a34a;
+      --primaire-2:#10b981;
+      --accent:#34d399;
+      --arriere-plan:#0b0f0e;
+      --surface: #0f1513;
+      --carte:#111a17;
+      --texte:#e7f2ec;
+      --attenue:#a6b7b0;
+      --blanc:#fff;
+      --ombre: 0 10px 30px rgba(16,185,129,.12);
+    }
+    
+    body{
+      font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial;
+      color:var(--texte);
+      background: 
+        radial-gradient(1200px 600px at 120% -20%, rgba(20,160,120,.25), transparent 50%), 
+        radial-gradient(800px 400px at -20% 20%, rgba(10,150,120,.2), transparent 55%), 
+        linear-gradient(180deg,#0b0f0e 0%, #0c1210 50%, #0b0f0e 100%);
+      background-attachment: fixed;
+    }
+    
+    .texte-degrade{
+      background:linear-gradient(135deg,var(--accent),#9ae6b4);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    
+    .verre{
+      background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.06));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:var(--ombre);
+      backdrop-filter: blur(10px);
+    }
+    
+    .superposition-hero {
+      background: 
+        linear-gradient(135deg, rgba(11,15,14,0.8) 0%, rgba(15,21,19,0.6) 100%),
+        radial-gradient(ellipse at top left, rgba(22,163,74,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at bottom right, rgba(16,185,129,0.1) 0%, transparent 50%);
+    }
+    
+    .btn-primaire {
+      background: linear-gradient(135deg, var(--primaire), var(--primaire-2));
+      border: none;
+      box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      transition: all 0.3s ease;
+    }
+    
+    .btn-primaire:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
+    }
+    
+    .btn-fantome {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(10px);
+    }
+    
+    .btn-fantome:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(22,163,74,0.5);
+    }
+    
+    .badge-confiance {
+      background: rgba(22,163,74,0.1);
+      border: 1px solid rgba(22,163,74,0.2);
+    }
+    
+    .carte-profil {
+      background: linear-gradient(145deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+      border: 1px solid rgba(255,255,255,0.15);
+      backdrop-filter: blur(15px);
+    }
+    
+    @keyframes flotter {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .flottant {
+      animation: flotter 6s ease-in-out infinite;
+    }
+    
+    /* Ajuste solo para los badges en móvil */
+    @media (max-width: 640px) {
+      .grid.grid-cols-1.sm\:grid-cols-3 {
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem; /* espacio entre badges */
+      }
 
-  .grid.grid-cols-1.sm\:grid-cols-3 > .badge-confiance {
-    flex: 1 1 0; /* las dos badges ocupan espacio igual */
-  }
-}
+      .grid.grid-cols-1.sm\:grid-cols-3 > .badge-confiance {
+        flex: 1 1 0; /* las dos badges ocupan espacio igual */
+      }
+    }
 
-/* ====== En-tête ====== */
-.en-tête-site {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 100;
-  background: rgba(11, 15, 14, 0.55);
-  backdrop-filter: blur(10px);
-  border: none;
-  padding: .5rem 1rem;
-}
+    /* ====== En-tête ====== */
+    .en-tête-site {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      z-index: 100;
+      background: rgba(11, 15, 14, 0.55);
+      backdrop-filter: blur(10px);
+      border: none;
+      padding: .5rem 1rem;
+    }
 
-/* Conteneur nav */
-.nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  min-height: 58px;
-}
+    /* Conteneur nav */
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      min-height: 58px;
+    }
 
-/* Ocultar brand */
-.marque { display: none !important; }
+    /* Ocultar brand */
+    .marque { display: none !important; }
 
-/* ====== Menu Desktop ====== */
-.menu {
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
-}
+    /* ====== Menu Desktop ====== */
+    .menu {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-.menu a {
-  position: relative;
-  color: #fff;
-  font-weight: 500;
-  font-size: .95rem;
-  text-decoration: none;
-  padding: .3rem 0;
-  transition: color .2s ease;
-}
+    .menu a {
+      position: relative;
+      color: #fff;
+      font-weight: 500;
+      font-size: .95rem;
+      text-decoration: none;
+      padding: .3rem 0;
+      transition: color .2s ease;
+    }
 
-.menu a::after {
-  content: "";
-  position: absolute;
-  bottom: -4px; left: 0;
-  width: 0%; height: 2px;
-  background: #00d1b2;
-  transition: width .3s ease;
-}
-.menu a:hover::after {
-  width: 100%;
-}
+    .menu a::after {
+      content: "";
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 0%; height: 2px;
+      background: #00d1b2;
+      transition: width .3s ease;
+    }
+    .menu a:hover::after {
+      width: 100%;
+    }
 
-.menu .btn {
-  background: linear-gradient(135deg, #00d1b2, #0077ff);
-  color: #fff !important;
-  padding: .5rem 1rem;
-  border-radius: 999px;
-  font-size: .9rem;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0,0,0,.2);
-}
+    .menu .btn {
+      background: linear-gradient(135deg, #00d1b2, #0077ff);
+      color: #fff !important;
+      padding: .5rem 1rem;
+      border-radius: 999px;
+      font-size: .9rem;
+      font-weight: 600;
+      box-shadow: 0 2px 6px rgba(0,0,0,.2);
+    }
 
-/* ====== Mobile Menu - REDISEÑADO ====== */
-.bouton-nav {
-  background: transparent;
-  border: 0;
-  color: #fff;
-  font-size: 1.6rem;
-  cursor: pointer;
-  z-index: 110;
-  display: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  position: relative;
-  transition: all 0.3s ease;
-}
+    /* ====== Mobile Menu - REDISEÑADO ====== */
+    .bouton-nav {
+      background: transparent;
+      border: 0;
+      color: #fff;
+      font-size: 1.6rem;
+      cursor: pointer;
+      z-index: 110;
+      display: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      position: relative;
+      transition: all 0.3s ease;
+    }
 
-.bouton-nav:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+    .bouton-nav:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-.menu-mobile {
-  position: fixed;
-  top: 0;
-  right: -100%;
-  width: 85%;
-  max-width: 320px;
-  height: 100vh;
-  background: linear-gradient(160deg, #0b0f0e, #141c2b);
-  z-index: 1000;
-  padding: 80px 30px 40px;
-  display: flex;
-  flex-direction: column;
-  transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
-  overflow-y: auto;
-}
+    .menu-mobile {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 85%;
+      max-width: 320px;
+      height: 100vh;
+      background: linear-gradient(160deg, #0b0f0e, #141c2b);
+      z-index: 1000;
+      padding: 80px 30px 40px;
+      display: flex;
+      flex-direction: column;
+      transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+      box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+      overflow-y: auto;
+    }
 
-.menu-mobile.ouvert {
-  right: 0;
-}
+    .menu-mobile.ouvert {
+      right: 0;
+    }
 
-.superposition-menu-mobile {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 999;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
+    .superposition-menu-mobile {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      z-index: 999;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+    }
 
-.superposition-menu-mobile.ouvert {
-  opacity: 1;
-  visibility: visible;
-}
+    .superposition-menu-mobile.ouvert {
+      opacity: 1;
+      visibility: visible;
+    }
 
-.menu-mobile a {
-  display: block;
-  color: #fff;
-  font-size: 1.2rem;
-  font-weight: 500;
-  padding: 15px 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
+    .menu-mobile a {
+      display: block;
+      color: #fff;
+      font-size: 1.2rem;
+      font-weight: 500;
+      padding: 15px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
 
-.menu-mobile a:last-child {
-  border-bottom: none;
-}
+    .menu-mobile a:last-child {
+      border-bottom: none;
+    }
 
-.menu-mobile a:hover {
-  color: var(--accent);
-  padding-left: 10px;
-}
+    .menu-mobile a:hover {
+      color: var(--accent);
+      padding-left: 10px;
+    }
 
-.menu-mobile .btn {
-  margin-top: 20px;
-  text-align: center;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, var(--primaire), var(--primaire-2));
-  border-radius: 8px;
-  font-weight: 600;
-}
+    .menu-mobile .btn {
+      margin-top: 20px;
+      text-align: center;
+      padding: 12px 20px;
+      background: linear-gradient(135deg, var(--primaire), var(--primaire-2));
+      border-radius: 8px;
+      font-weight: 600;
+    }
 
-.fermer-menu {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  color: #fff;
-  font-size: 1.8rem;
-  cursor: pointer;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
+    .fermer-menu {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 1.8rem;
+      cursor: pointer;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
 
-.fermer-menu:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
+    .fermer-menu:hover {
+      background: rgba(255, 255, 255, 0.1);
+    }
 
-/* ====== Boutons ====== */
+    /* ====== Boutons ====== */
     .btn{
       display:inline-flex;align-items:center;gap:.5rem;
       border-radius:999px;border:1px solid rgba(255,255,255,.12);
@@ -330,43 +333,42 @@
     .deux-colonnes{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center}
     .deux-colonnes .media img{border-radius:16px;box-shadow:var(--ombre)}
 
-            .h2 {
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
-            margin: 0;
-            font-family: 'Prata', serif;
-            color: white;
-            text-transform: uppercase;
-            line-height: 1.2;
-            text-align: center;
-            position: relative;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.18);
-        }
-        
-        .h2::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(120px, 40%, 220px);
-    height: 4px;
-    background: linear-gradient(90deg, #ffffff, var(--accent), #ffffff);
-    background-size: 300% 300%;
-    animation: briller 3s ease-in-out infinite;
-    border-radius: 2px;
-}
-
-
-         .attenue {
-            color: var(--attenue);
-            font-size: 0.8rem;
-            max-width: 600px;
-            margin: 0 auto;
-            margin-top: 20px;
-            text-align: center;
-            line-height: 1.5;
-         }
+    .h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin: 0;
+      font-family: 'Prata', serif;
+      color: white;
+      text-transform: uppercase;
+      line-height: 1.2;
+      text-align: center;
+      position: relative;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.18);
+    }
     
+    .h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(120px, 40%, 220px);
+      height: 4px;
+      background: linear-gradient(90deg, #ffffff, var(--accent), #ffffff);
+      background-size: 300% 300%;
+      animation: briller 3s ease-in-out infinite;
+      border-radius: 2px;
+    }
+
+    .attenue {
+      color: var(--attenue);
+      font-size: 0.8rem;
+      max-width: 600px;
+      margin: 0 auto;
+      margin-top: 20px;
+      text-align: center;
+      line-height: 1.5;
+    }
+
     .note-prix {
       text-align: center;
       margin-top: 25px;
@@ -375,97 +377,97 @@
       padding: 0 10px !important;
     }
 
-/* ====== Pied de page général ====== */
-.pied-de-page-site {
-  border-top: 1px solid rgba(255,255,255,.08);
-  padding: 20px 15px;
-  font-family: 'Rubik', sans-serif;
-  color: #e0f2e9;
-}
+    /* ====== Pied de page général ====== */
+    .pied-de-page-site {
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding: 20px 15px;
+      font-family: 'Rubik', sans-serif;
+      color: #e0f2e9;
+    }
 
-.contact-pied {
-  display: flex;
-  justify-content: space-between; /* contacto a la izquierda, social a la derecha */
-  align-items: center;
-}
+    .contact-pied {
+      display: flex;
+      justify-content: space-between; /* contacto a la izquierda, social a la derecha */
+      align-items: center;
+    }
 
-.info-contact p {
-  margin: 2px 0;
-  font-size: 0.9rem;
-}
+    .info-contact p {
+      margin: 2px 0;
+      font-size: 0.9rem;
+    }
 
-.info-contact p i {
-  margin-right: 6px;
-  color: #16a34a;
-}
+    .info-contact p i {
+      margin-right: 6px;
+      color: #16a34a;
+    }
 
-/* Íconos sociales */
-.social {
-  display: flex;
-  gap: 6px;
-}
+    /* Íconos sociales */
+    .social {
+      display: flex;
+      gap: 6px;
+    }
 
-.social a {
-  display: inline-grid;
-  place-items: center;
-  width: 28px;
-  height: 28px;
-  border-radius: 8px;
-  background: rgba(255,255,255,0.05);
-  color: #16a34a;
-  transition: all 0.3s ease;
-}
+    .social a {
+      display: inline-grid;
+      place-items: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: rgba(255,255,255,0.05);
+      color: #16a34a;
+      transition: all 0.3s ease;
+    }
 
-.social a:hover {
-  background: #16a34a;
-  color: white;
-}
+    .social a:hover {
+      background: #16a34a;
+      color: white;
+    }
 
-.bas-pied {
-  margin-top: 10px;
-  text-align: center;
-  color: rgba(224, 242, 241, 0.7);
-  font-size: 0.85rem;
-}
+    .bas-pied {
+      margin-top: 10px;
+      text-align: center;
+      color: rgba(224, 242, 241, 0.7);
+      font-size: 0.85rem;
+    }
 
-/* Links dentro del footer */
-.info-contact a {
-  color: #ffffff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
+    /* Links dentro del footer */
+    .info-contact a {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
 
-.info-contact a:hover {
-  color: #16a34a;
-}
+    .info-contact a:hover {
+      color: #16a34a;
+    }
 
-/* ====== Móvil compacto ====== */
-@media (max-width: 640px) {
-  .pied-de-page-site {
-    padding: 10px 12px;
-  }
+    /* ====== Móvil compacto ====== */
+    @media (max-width: 640px) {
+      .pied-de-page-site {
+        padding: 10px 12px;
+      }
 
-  .contact-pied {
-    flex-direction: row;           /* horizontal */
-    justify-content: space-between;/* contacto izquierda, social derecha */
-    align-items: center;
-  }
+      .contact-pied {
+        flex-direction: row;           /* horizontal */
+        justify-content: space-between;/* contacto izquierda, social derecha */
+        align-items: center;
+      }
 
-  .info-contact p {
-    font-size: 0.75rem;
-    margin: 0 2px;
-  }
+      .info-contact p {
+        font-size: 0.75rem;
+        margin: 0 2px;
+      }
 
-  .social a {
-    width: 24px;
-    height: 24px;
-  }
+      .social a {
+        width: 24px;
+        height: 24px;
+      }
 
-  .bas-pied {
-    font-size: 0.7rem;
-    margin-top: 4px;
-  }
-}
+      .bas-pied {
+        font-size: 0.7rem;
+        margin-top: 4px;
+      }
+    }
 
     /* ====== Responsive ====== */
     @media (max-width: 980px){
@@ -483,9 +485,9 @@
       }
 
       .h2::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
+        left: 50%;
+        transform: translateX(-50%);
+      }
       
       .conteneur-tarification {
         padding: 20px 15px;
@@ -497,13 +499,13 @@
     }
 
     .conteneur {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1.25rem;  /* espace sur mobile et PC */
-}
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.25rem;  /* espace sur mobile et PC */
+    }
 
-.carte-prix .prix {
+    .carte-prix .prix {
       font-size: 2.25rem;
       font-weight: 700;
       line-height: 1;
@@ -536,932 +538,1088 @@
       color: var(--accent);
     }
     
-  h1 {
-  font-family: 'Prata', serif;
-  font-size: 2.2rem; /* 2.8rem en desktop */
-  font-weight: normal;
-  color: #ffffff;
-  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
-}
+    h1 {
+      font-family: 'Prata', serif;
+      font-size: 2.2rem; /* 2.8rem en desktop */
+      font-weight: normal;
+      color: #ffffff;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    }
 
-.texte-degrade p {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 300;
-  font-size: 1rem;
-  color: rgba(255,255,255,0.85);
-}
+    .texte-degrade p {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 300;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+    }
 
-/* Degradado dorado para el span */
-#inicio .texte-degrade {
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: briller 6s ease-in-out infinite;
-}
+    /* Degradado dorado para el span */
+    #inicio .texte-degrade {
+      background-size: 300% 300%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: briller 6s ease-in-out infinite;
+    }
 
-/* Texto secundario (párrafo) */
-#inicio p {
-  font-family: 'Rubik', sans-serif;
-  font-weight: 300;
-  font-size: 1.1rem; /* ajusta al tamaño Tailwind text-lg ~1.125rem */
-  color: rgba(255,255,255,0.85);
-  line-height: 1.6;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
-  max-width: 52ch;
-}
+    /* Texto secundario (párrafo) */
+    #inicio p {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 300;
+      font-size: 1.1rem; /* ajusta al tamaño Tailwind text-lg ~1.125rem */
+      color: rgba(255,255,255,0.85);
+      line-height: 1.6;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      max-width: 52ch;
+    }
 
-/* ====== ESTILOS DE SERVICES.HTML ====== */
-:root{
-            --primary:#16a34a;
-            --primary-2:#10b981;
-            --accent:#34d399;
-            --accent-2:#6ee7b7;
-            --bg:#0b0f0e;
-            --surface: #0f1513;
-            --card:#111a17;
-            --text:#e7f2ec;
-            --muted:#a6b7b0;
-            --white:#fff;
-            --shadow: 0 10px 30px rgba(16,185,129,.12);
-            --glow: 0 0 40px rgba(52,211,153,.4);
-            --border: rgba(255,255,255,0.08);
-            --primary-dark: #0d8a3a;
-            --accent-light: #6ee7b7;
-            --dark-bg: #0b0f0e;
-            --card-bg: rgba(17, 26, 23, 0.95);
-        }
-        
-        .gradient-text{
-            background:linear-gradient(135deg,var(--accent),#9ae6b4);
-            -webkit-background-clip:text;
-            background-clip:text;
-            color:transparent;
-        }
-        
-        /* Estilos para la sección de servicios */
-        .servicios-section{padding:6rem 0;min-height:100vh;position:relative}
-        
-        .section-header{text-align:center;margin-bottom:4rem;position:relative;z-index:2}
-        .section-subtitle{font-size:.95rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
-       
-        .section-title {
-    font-size: clamp(1.8rem, 3vw, 2.8rem);
-    margin: 0;
-    font-family: 'Prata', serif;
-    color: white;
-    text-transform: uppercase;
-    line-height: 1.2;
-    position: relative;
-    text-align: center;
-    text-shadow: 0 0 8px rgba(0, 255, 128, 0.25);
-}
+    /* ====== ESTILOS DE SERVICES.HTML ====== */
+    :root{
+      --primary:#16a34a;
+      --primary-2:#10b981;
+      --accent:#34d399;
+      --accent-2:#6ee7b7;
+      --bg:#0b0f0e;
+      --surface: #0f1513;
+      --card:#111a17;
+      --text:#e7f2ec;
+      --muted:#a6b7b0;
+      --white:#fff;
+      --shadow: 0 10px 30px rgba(16,185,129,.12);
+      --glow: 0 0 40px rgba(52,211,153,.4);
+      --border: rgba(255,255,255,0.08);
+      --primary-dark: #0d8a3a;
+      --accent-light: #6ee7b7;
+      --dark-bg: #0b0f0e;
+      --card-bg: rgba(17, 26, 23, 0.95);
+    }
+    
+    .gradient-text{
+      background:linear-gradient(135deg,var(--accent),#9ae6b4);
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    
+    /* Estilos para la sección de servicios */
+    .servicios-section{padding:6rem 0;min-height:100vh;position:relative}
+    
+    .section-header{text-align:center;margin-bottom:4rem;position:relative;z-index:2}
+    .section-subtitle{font-size:.95rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+   
+    .section-title {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin: 0;
+      font-family: 'Prata', serif;
+      color: white;
+      text-transform: uppercase;
+      line-height: 1.2;
+      position: relative;
+      text-align: center;
+      text-shadow: 0 0 8px rgba(0, 255, 128, 0.25);
+    }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: -15px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: clamp(120px, 40%, 220px);
-    height: 4px;
-    background: linear-gradient(90deg, #00ff88, var(--accent), #00ffcc);
-    background-size: 300% 300%;
-    animation: shine 3s ease-in-out infinite;
-    border-radius: 2px;
-}
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: clamp(120px, 40%, 220px);
+      height: 4px;
+      background: linear-gradient(90deg, #00ff88, var(--accent), #00ffcc);
+      background-size: 300% 300%;
+      animation: shine 3s ease-in-out infinite;
+      border-radius: 2px;
+    }
 
-@keyframes shine {
-    0%, 100% {
+    @keyframes shine {
+      0%, 100% {
         background-position: 0% 50%;
-    }
-    50% {
+      }
+      50% {
         background-position: 100% 50%;
+      }
     }
-}
 
-.section-description {
-    font-size: 1.1rem;
-    color: var(--muted);
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.7;
-    text-align: center;
-}
+    .section-description {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.7;
+      text-align: center;
+    }
+    
+    /* Fuente más convencional y legible */
+    .servicio-card {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(145deg, rgba(255,255,255,.06) 0%, rgba(172, 0, 0, 0.02) 100%);
+      border: 1px solid var(--border);
+      border-radius: 1.5rem;
+      padding: 2.2rem;
+      position: relative;
+      transition: transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s ease, border-color .4s ease;
+      backdrop-filter: blur(12px);
+      overflow: hidden;
+      cursor: pointer;
+      margin-bottom: 2rem; /* 🔥 más espacio entre cartas */
+    }
 
-        
-/* Fuente más convencional y legible */
-.servicio-card {
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(145deg, rgba(255,255,255,.06) 0%, rgba(172, 0, 0, 0.02) 100%);
-    border: 1px solid var(--border);
-    border-radius: 1.5rem;
-    padding: 2.2rem;
-    position: relative;
-    transition: transform .4s cubic-bezier(.4,0,.2,1), box-shadow .4s ease, border-color .4s ease;
-    backdrop-filter: blur(12px);
-    overflow: hidden;
-    cursor: pointer;
-    margin-bottom: 2rem; /* 🔥 más espacio entre cartas */
-}
+    /* Mantengo hover original */
+    .servicio-card:hover {
+      transform: translateY(-8px) scale(1.01);
+      border-color: rgba(22,163,74,.35);
+      box-shadow: 0 25px 50px rgba(0,0,0,.25);
+    }
 
-/* Mantengo hover original */
-.servicio-card:hover {
-    transform: translateY(-8px) scale(1.01);
-    border-color: rgba(22,163,74,.35);
-    box-shadow: 0 25px 50px rgba(0,0,0,.25);
-}
+    .servicio-card:hover::before {
+      opacity: 1;
+      transform: rotate(25deg) translateX(140%);
+    }
 
-.servicio-card:hover::before {
-    opacity: 1;
-    transform: rotate(25deg) translateX(140%);
-}
+    /* Icono más atractivo */
+    .servicio-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 25px rgba(0, 255, 128, 0.25);
+      position: relative;
+      isolation: isolate;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
 
-/* Icono más atractivo */
-.servicio-icon {
-    width: 80px;
-    height: 80px;
-    background: linear-gradient(135deg, var(--accent), var(--accent-2));
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2rem;
-    color: white;
-    margin-bottom: 1.5rem;
-    box-shadow: 0 8px 25px rgba(0, 255, 128, 0.25);
-    position: relative;
-    isolation: isolate;
-    transition: transform .35s ease, box-shadow .35s ease;
-}
+    .servicio-card:hover .servicio-icon {
+      transform: scale(1.08);
+      box-shadow: 0 12px 30px rgba(0, 255, 128, 0.35);
+    }
 
-.servicio-card:hover .servicio-icon {
-    transform: scale(1.08);
-    box-shadow: 0 12px 30px rgba(0, 255, 128, 0.35);
-}
+    .servicio-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      margin-bottom: .6rem;
+      color: var(--white);
+    }
 
-.servicio-card h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: .6rem;
-    color: var(--white);
-}
+    .servicio-card p {
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
 
-.servicio-card p {
-    color: var(--muted);
-    line-height: 1.7;
-    margin-bottom: 1.2rem;
-    font-size: 1rem;
-}
+    .btn-detalles{background:transparent;border:2px solid rgba(22,163,74,.35);color:var(--accent);padding:.75rem 1.2rem;border-radius:999px;font-weight:600;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
+    .btn-detalles:hover{background:rgba(22,163,74,.12);border-color:var(--accent);transform:translateY(-1px)}
+    
+    .servicio-detalles{--h:0;height:var(--h);overflow:hidden;transition:height .45s ease;will-change:height;border-top:1px dashed rgba(255,255,255,.12);margin-top:1rem;padding-top:0}
+    .servicio-detalles-inner{padding-top:1rem;display:grid;gap:.75rem}
+    .servicio-lista{list-style:none;margin:0;padding:0}
+    .servicio-lista li{padding:.55rem 0 .55rem 1.6rem;position:relative;color:var(--muted)}
+    .servicio-lista li::before{content:'✨';position:absolute;left:0}
+    
+    .container-services{max-width:1200px;margin:0 auto;padding:0 1.5rem}
+    
+    /* ===== Sección de promoción (estilo barbería) ===== */
+    .promocion-section {
+      position: relative;
+      background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+      padding: 6rem 2rem;
+      color: white;
+      overflow: hidden;
+    }
+    
+    .overlay-verde {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(rgba(11, 15, 14, 0.85), rgba(22, 163, 74, 0.25));
+      z-index: 0;
+    }
+    
+    .limitar-ancho {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .contenedor-promo {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+    }
+    
+    .promo-title {
+      flex: 1 1 clamp(220px, 25%, 300px);
+    }
+    
+    .etiqueta {
+      font-size: 1rem;
+      margin-bottom: 0.5rem;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+      font-weight:600;
+    }
+    
+    .titulo-seccion {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      margin: 0;
+      font-family: 'Prata', serif;
+      color: white;
+      text-transform: uppercase;
+      line-height: 1.2;
+      position: relative;
+      text-shadow: 0 0 8px rgba(255, 255, 255, 0.18);
+    }
+    
+    .titulo-seccion::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 0;
+      width: clamp(120px, 40%, 220px);
+      height: 4px;
+      background: linear-gradient(90deg, #ffffff, var(--accent), #ffffff);
+      background-size: 300% 300%;
+      animation: shine 3s ease-in-out infinite;
+      border-radius: 2px;
+    }
+    
+    .promo-text {
+      flex: 1 1 clamp(350px, 60%, 700px);
+      max-width: 700px;
+    }
+    
+    .promo-text p {
+      font-size: clamp(0.95rem, 1.1vw, 1.2rem);
+      line-height: 1.8;
+      color: #ffffff;
+      margin: 0;
+      position: relative;
+    }
+    
+    .promo-button {
+      flex: 0 0 auto;
+    }
+    
+    .btn-promo {
+      display: inline-block;
+      padding: 1rem 2rem;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--accent);
+      border: 1px solid var(--accent);
+      text-decoration: none;
+      transition: all 0.4s ease;
+      position: relative;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+    
+    .btn-promo:hover {
+      background-color: var(--accent);
+      color: #111;
+      border-color: #fff;
+    }
+    
+    /* Bottom Sheet style */
+    .sheet-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.8);
+      backdrop-filter: blur(5px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      z-index: 100;
+    }
+    
+    .sheet {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: -100%;
+      height: 85vh;
+      max-height: 850px;
+      background: var(--card-bg);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
+      border: 1px solid var(--border);
+      transition: transform 0.45s cubic-bezier(.22,.61,.36,1), bottom 0.45s cubic-bezier(.22,.61,.36,1);
+      transform: translateY(100%);
+      z-index: 1010;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    
+    .sheet.open {
+      bottom: 0;
+      transform: translateY(0);
+    }
+    
+    .sheet-header {
+      padding: 2rem 2rem 1rem;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    
+    .sheet-close-x {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.5rem;
+      cursor: pointer;
+      z-index: 10;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+    
+    .sheet-close-x:hover {
+      background: rgba(0, 0, 0, 0.4);
+    }
+    
+    .sheet-title {
+      font-family: 'Prata', serif;
+      font-size: 2rem;
+      margin: 0 0 0.5rem;
+      color: white;
+    }
+    
+    .sheet-subtitle {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin: 0;
+    }
+    
+    .sheet-body {
+      padding: 1.5rem 2rem 2rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      overflow: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Images petites côte-à-côte dans la sheet */
+    .sheet-images {
+      display: flex;
+      flex-direction: row;   /* côte-à-côte */
+      gap: 0.6rem;           /* espacement entre images */
+      align-items: center;
+      flex-wrap: wrap;       /* permet le retour à la ligne sur petits écrans */
+    }
 
-        .btn-detalles{background:transparent;border:2px solid rgba(22,163,74,.35);color:var(--accent);padding:.75rem 1.2rem;border-radius:999px;font-weight:600;cursor:pointer;transition:all .25s ease;display:inline-flex;align-items:center;gap:.5rem;text-decoration:none}
-        .btn-detalles:hover{background:rgba(22,163,74,.12);border-color:var(--accent);transform:translateY(-1px)}
-        
-        .servicio-detalles{--h:0;height:var(--h);overflow:hidden;transition:height .45s ease;will-change:height;border-top:1px dashed rgba(255,255,255,.12);margin-top:1rem;padding-top:0}
-        .servicio-detalles-inner{padding-top:1rem;display:grid;gap:.75rem}
-        .servicio-lista{list-style:none;margin:0;padding:0}
-        .servicio-lista li{padding:.55rem 0 .55rem 1.6rem;position:relative;color:var(--muted)}
-        .servicio-lista li::before{content:'✨';position:absolute;left:0}
-        
-        .container-services{max-width:1200px;margin:0 auto;padding:0 1.5rem}
-        
-        /* ===== Sección de promoción (estilo barbería) ===== */
-        .promocion-section {
-            position: relative;
-            background: url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
-            padding: 6rem 2rem;
-            color: white;
-            overflow: hidden;
-        }
-        
-        .overlay-verde {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(rgba(11, 15, 14, 0.85), rgba(22, 163, 74, 0.25));
-            z-index: 0;
-        }
-        
-        .limitar-ancho {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .contenedor-promo {
-            display: flex;
-            align-items: flex-start;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2.5rem;
-        }
-        
-        .promo-title {
-            flex: 1 1 clamp(220px, 25%, 300px);
-        }
-        
-        .etiqueta {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            position: relative;
-            font-weight:600;
-        }
-        
-        .titulo-seccion {
-            font-size: clamp(1.8rem, 3vw, 2.8rem);
-            margin: 0;
-            font-family: 'Prata', serif;
-            color: white;
-            text-transform: uppercase;
-            line-height: 1.2;
-            position: relative;
-            text-shadow: 0 0 8px rgba(255, 255, 255, 0.18);
-        }
-        
-        .titulo-seccion::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: clamp(120px, 40%, 220px);
-            height: 4px;
-            background: linear-gradient(90deg, #ffffff, var(--accent), #ffffff);
-            background-size: 300% 300%;
-            animation: shine 3s ease-in-out infinite;
-            border-radius: 2px;
-        }
-        
-        .promo-text {
-            flex: 1 1 clamp(350px, 60%, 700px);
-            max-width: 700px;
-        }
-        
-        .promo-text p {
-            font-size: clamp(0.95rem, 1.1vw, 1.2rem);
-            line-height: 1.8;
-            color: #cbffc9;
-            margin: 0;
-            position: relative;
-        }
-        
-        .promo-button {
-            flex: 0 0 auto;
-        }
-        
-        .btn-promo {
-            display: inline-block;
-            padding: 1rem 2rem;
-            font-weight: 700;
-            font-size: 0.95rem;
-            text-transform: uppercase;
-            background: rgba(0, 0, 0, 0.8);
-            color: var(--accent);
-            border: 1px solid var(--accent);
-            text-decoration: none;
-            transition: all 0.4s ease;
-            position: relative;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-        
-        .btn-promo:hover {
-            background-color: var(--accent);
-            color: #111;
-            border-color: #fff;
-        }
-        
-        /* Bottom Sheet style */
-        .sheet-backdrop {
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,.8);
-            backdrop-filter: blur(5px);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-            z-index: 1000;
-        }
-        
-        .sheet {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: -100%;
-            height: 85vh;
-            max-height: 850px;
-            background: var(--card-bg);
-            border-top-left-radius: 12px;
-            border-top-right-radius: 12px;
-            box-shadow: 0 -10px 30px rgba(0,0,0,0.3);
-            border: 1px solid var(--border);
-            transition: transform 0.45s cubic-bezier(.22,.61,.36,1), bottom 0.45s cubic-bezier(.22,.61,.36,1);
-            transform: translateY(100%);
-            z-index: 1010;
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-        }
-        
-        .sheet.open {
-            bottom: 0;
-            transform: translateY(0);
-        }
-        
-        .sheet-header {
-            padding: 2rem 2rem 1rem;
-            border-bottom: 1px solid var(--border);
-            position: relative;
-        }
-        
-        .sheet-close-x {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.5rem;
-            cursor: pointer;
-            z-index: 10;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(0, 0, 0, 0.2);
-            transition: background 0.3s ease;
-        }
-        
-        .sheet-close-x:hover {
-            background: rgba(0, 0, 0, 0.4);
-        }
-        
-        .sheet-title {
-            font-family: 'Prata', serif;
-            font-size: 2rem;
-            margin: 0 0 0.5rem;
-            color: white;
-        }
-        
-        .sheet-subtitle {
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin: 0;
-        }
-        
-        .sheet-body {
-            padding: 1.5rem 2rem 2rem;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            overflow: auto;
-            -webkit-overflow-scrolling: touch;
-        }
-        
-        /* Images petites côte-à-côte dans la sheet */
-        .sheet-images {
-          display: flex;
-          flex-direction: row;   /* côte-à-côte */
-          gap: 0.6rem;           /* espacement entre images */
-          align-items: center;
-          flex-wrap: wrap;       /* permet le retour à la ligne sur petits écrans */
-        }
+    /* Taille fixe pour chaque vignette */
+    .image-container {
+      flex: 0 0 120px;       /* largeur fixe 120px */
+      height: 80px;          /* hauteur fixe 80px */
+      border-radius: 8px;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+    }
 
-        /* Taille fixe pour chaque vignette */
-        .image-container {
-          flex: 0 0 120px;       /* largeur fixe 120px */
-          height: 80px;          /* hauteur fixe 80px */
-          border-radius: 8px;
-          overflow: hidden;
-          position: relative;
-          box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-        }
+    /* L'image remplit la vignette correctement */
+    .image-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;     /* garde le recadrage propre */
+      display: block;
+    }
 
-        /* L'image remplit la vignette correctement */
-        .image-container img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;     /* garde le recadrage propre */
-          display: block;
-        }
+    /* Légende plus compacte */
+    .image-caption {
+      font-size: 0.72rem;
+      padding: 0.3rem;
+    }
 
-        /* Légende plus compacte */
-        .image-caption {
-          font-size: 0.72rem;
-          padding: 0.3rem;
-        }
+    .sheet-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .sheet-description {
+      line-height: 1.6;
+      color: var(--muted);
+    }
+    
+    .features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .features-list li {
+      padding: 0.5rem 0;
+      position: relative;
+      padding-left: 2rem;
+      color: var(--muted);
+    }
+    
+    .features-list li:before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    
+    .sheet-testimonial {
+      background: rgba(22, 163, 74, 0.06);
+      border-left: 4px solid var(--accent);
+      padding: 1rem;
+      border-radius: 4px;
+      font-style: italic;
+      color: var(--muted);
+    }
+    
+    .sheet-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn-sheet {
+      padding: 0.8rem 1.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .btn-primary:hover {
+      background: var(--primary-dark);
+    }
+    
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(52, 211, 153, 0.06);
+    }
+    
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 200% 50%; }
+    }
+    
+    @media (max-width: 768px) {
+      .servicios-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .sheet-body {
+        grid-template-columns: 1fr;
+      }
+      
+      .contenedor-promo {
+        justify-content: center;
+        text-align: center;
+      }
+      
+      .titulo-seccion::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      
+      .sheet-actions {
+        flex-direction: column;
+      }
+      
+      .sheet {
+        height: 90vh;
+      }
+      
+      /* Ajustement para muy pequeños écrans */
+      @media (max-width: 420px) {
+        .image-container { flex: 0 0 90px; height: 62px; }
+        .image-caption { font-size: 0.65rem; }
+      }
+    }
 
-        .sheet-details {
-            display: flex;
-            flex-direction: column;
-            gap: 1.5rem;
-        }
-        
-        .sheet-description {
-            line-height: 1.6;
-            color: var(--muted);
-        }
-        
-        .features-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        
-        .features-list li {
-            padding: 0.5rem 0;
-            position: relative;
-            padding-left: 2rem;
-            color: var(--muted);
-        }
-        
-        .features-list li:before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-        
-        .sheet-testimonial {
-            background: rgba(22, 163, 74, 0.06);
-            border-left: 4px solid var(--accent);
-            padding: 1rem;
-            border-radius: 4px;
-            font-style: italic;
-            color: var(--muted);
-        }
-        
-        .sheet-actions {
-            display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .btn-sheet {
-            padding: 0.8rem 1.5rem;
-            border-radius: 4px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: none;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-        }
-        
-        .btn-secondary {
-            background: transparent;
-            border: 1px solid var(--accent);
-            color: var(--accent);
-        }
-        
-        .btn-secondary:hover {
-            background: rgba(52, 211, 153, 0.06);
-        }
-        
-        @keyframes shine {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 200% 50%; }
-        }
-        
-        @media (max-width: 768px) {
-            .servicios-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .sheet-body {
-                grid-template-columns: 1fr;
-            }
-            
-            .contenedor-promo {
-                justify-content: center;
-                text-align: center;
-            }
-            
-            .titulo-seccion::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
-            .sheet-actions {
-                flex-direction: column;
-            }
-            
-            .sheet {
-                height: 90vh;
-            }
-            
-            /* Ajustement para muy pequeños écrans */
-            @media (max-width: 420px) {
-              .image-container { flex: 0 0 90px; height: 62px; }
-              .image-caption { font-size: 0.65rem; }
-            }
-        }
+    /* === INFORMACIÓN DE LA PISTA (AHORA EN TOOLTIP) === */
+    .track-info {
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.9);
+      padding: 8px 16px;
+      border-radius: 12px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(104, 51, 255, 0.3);
+      z-index: 10;
+    }
 
-/* === INFORMACIÓN DE LA PISTA (AHORA EN TOOLTIP) === */
-.track-info {
-    position: absolute;
-    top: -45px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.9);
-    padding: 8px 16px;
-    border-radius: 12px;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(104, 51, 255, 0.3);
-    z-index: 10;
-}
+    .track-info.show {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(-50%) translateY(-5px);
+    }
 
-.track-info.show {
-    opacity: 1;
-    pointer-events: all;
-    transform: translateX(-50%) translateY(-5px);
-}
+    .track-title {
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-align: center;
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+      background: linear-gradient(135deg, #ffffff, #6833ff);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
-.track-title {
-    color: #ffffff;
-    font-size: 0.8rem;
-    font-weight: 600;
-    text-align: center;
-    letter-spacing: 0.5px;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    background: linear-gradient(135deg, #ffffff, #6833ff);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
+    /* Canvas para partículas */
+    #particles {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      pointer-events: none; /* no bloquear clics */
+    }
 
-/* Canvas para partículas */
-#particles {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none; /* no bloquear clics */
-  }
-
-  /* Asegura que el contenido quede encima */
-  body > * {
-    position: relative;
-    z-index: 1;
-  }
+    /* Asegura que el contenido quede encima */
+    body > * {
+      position: relative;
+      z-index: 1;
+    }
 
     .servicios-section {
-    padding: 6rem 0;
-    min-height: 100vh;
-    position: relative;
-    background: url("fon4.png") center/cover no-repeat;
-    overflow: hidden; /* asegura que el overlay no se salga */
-}
+      padding: 6rem 0;
+      min-height: 100vh;
+      position: relative;
+      background: url("fon4.png") center/cover no-repeat;
+      overflow: hidden; /* asegura que el overlay no se salga */
+    }
 
-.servicios-section::before {
-    content: "";
-    position: absolute;
-    inset: 0; /* ocupa todo el contenedor */
-    background: rgba(0, 0, 0, 0.6); /* negro semi-transparente */
-    transition: background 0.3s ease; /* animación suave */
-    z-index: 1;
-}
+    .servicios-section::before {
+      content: "";
+      position: absolute;
+      inset: 0; /* ocupa todo el contenedor */
+      background: rgba(0, 0, 0, 0.6); /* negro semi-transparente */
+      transition: background 0.3s ease; /* animación suave */
+      z-index: 1;
+    }
 
-.servicios-section:hover::before {
-    background: rgba(0, 0, 0, 0.7); /* se oscurece más en hover */
-}
+    .servicios-section:hover::before {
+      background: rgba(0, 0, 0, 0.7); /* se oscurece más en hover */
+    }
 
-/* Aseguramos que el contenido quede por encima del overlay */
-.servicios-section > * {
-    position: relative;
-    z-index: 2;
-}
+    /* Aseguramos que el contenido quede por encima del overlay */
+    .servicios-section > * {
+      position: relative;
+      z-index: 2;
+    }
 
-.section-tarification {
-    padding: 6rem 0;
-    min-height: 100vh;
-    position: relative;
-    background: url("fon4.png") center/cover no-repeat !important;
-    overflow: hidden;
-}
+    .section-tarification {
+      padding: 6rem 0;
+      min-height: 100vh;
+      position: relative;
+      background: url("fon4.png") center/cover no-repeat !important;
+      overflow: hidden;
+    }
 
-.section-tarification::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.6); /* overlay negro */
-    transition: background 0.3s ease;
-    z-index: 1;
-}
+    .section-tarification::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6); /* overlay negro */
+      transition: background 0.3s ease;
+      z-index: 1;
+    }
 
-.section-tarification:hover::before {
-    background: rgba(0, 0, 0, 0.8); /* más oscuro en hover */
-}
+    .section-tarification:hover::before {
+      background: rgba(0, 0, 0, 0.8); /* más oscuro en hover */
+    }
 
-.section-tarification > * {
-    position: relative;
-    z-index: 2; /* asegura que el contenido quede arriba del overlay */
-}
+    .section-tarification > * {
+      position: relative;
+      z-index: 2; /* asegura que el contenido quede arriba del overlay */
+    }
 
-        /* Contenido interno de las cartas */
-.contenido-estilo {
-  font-family: 'Montserrat', sans-serif;
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
+    /* Contenido interno de las cartas */
+    .contenido-estilo {
+      font-family: 'Montserrat', sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
 
-/* Títulos y subtítulos */
-.servicio-titulo {
-  font-size: 1.4rem;
-  font-weight: 700;
-  margin: 0;
-  color: var(--white);
-}
-.servicio-subtitulo {
-  font-size: 0.85rem;
-  color: var(--accent);
-  font-weight: 600;
-  text-transform: uppercase;
-}
+    /* Títulos y subtítulos */
+    .servicio-titulo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--white);
+    }
+    .servicio-subtitulo {
+      font-size: 0.85rem;
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+    }
 
-/* Texto principal */
-.servicio-description {
-  font-size: 1rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
+    /* Texto principal */
+    .servicio-description {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
 
-/* Lista de características */
-.features-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 0.8rem;
-}
-.feature-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
-.feature-icon {
-  background: var(--accent);
-  color: white;
-  width: 18px;
-  height: 18px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.7rem;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
+    /* Lista de características */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 0.8rem;
+    }
+    .feature-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+    .feature-icon {
+      background: var(--accent);
+      color: white;
+      width: 18px;
+      height: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
 
-/* Bloque de precios */
-.servicio-pricing {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1rem;
-}
-.pricing-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-.precio-desde {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: var(--accent);
-}
-.precio-unidad {
-  font-size: 0.9rem;
-  color: var(--muted);
-}
-.precio-badge {
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-.precio-extra {
-  font-size: 0.85rem;
-  color: var(--muted);
-}
+    /* Bloque de precios */
+    .servicio-pricing {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 1rem;
+    }
+    .pricing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .precio-desde {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--accent);
+    }
+    .precio-unidad {
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+    .precio-badge {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      padding: 3px 10px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .precio-extra {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
 
-/* Botones de acción */
-.servicio-actions {
-  display: flex;
-  gap: 1rem;
-}
-.btn-primary {
-  flex: 1;
-  background: linear-gradient(135deg, var(--accent), var(--accent-2));
-  color: white;
-  border: none;
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
-}
-.btn-secondary {
-  flex: 1;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  color: var(--white);
-  padding: 12px 20px;
-  border-radius: 10px;
-  font-weight: 600;
-  text-align: center;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-.btn-secondary:hover {
-  border-color: var(--accent);
-  background: rgba(0, 255, 136, 0.1);
-  color: var(--accent);
-}
+    /* Botones de acción */
+    .servicio-actions {
+      display: flex;
+      gap: 1rem;
+    }
+    .btn-primary {
+      flex: 1;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 255, 136, 0.3);
+    }
+    .btn-secondary {
+      flex: 1;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      color: var(--white);
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-weight: 600;
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    .btn-secondary:hover {
+      border-color: var(--accent);
+      background: rgba(0, 255, 136, 0.1);
+      color: var(--accent);
+    }
 
-.boton-whatsapp-mini {
-  position: fixed;
-  bottom: 60px;  /* sobre el audio */
-  right: 0;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding: 12px;
-  background: linear-gradient(135deg, #25D366, #1ebe57);
-  color: white;
-  font-weight: 600;
-  border-top-left-radius: 30px;
-  border-bottom-left-radius: 30px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
-  text-decoration: none;
-  z-index: 1000;
-  overflow: hidden;
-  width: 30px;  /* ancho inicial solo con el icono */
-  transition: width 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
-}
+    .boton-whatsapp-mini {
+      position: fixed;
+      bottom: 60px;  /* sobre el audio */
+      right: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px;
+      background: linear-gradient(135deg, #25D366, #1ebe57);
+      color: white;
+      font-weight: 600;
+      border-top-left-radius: 30px;
+      border-bottom-left-radius: 30px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+      text-decoration: none;
+      z-index: 1000;
+      overflow: hidden;
+      width: 30px;  /* ancho inicial solo con el icono */
+      transition: width 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    }
 
-/* Hover o foco: se despliega mostrando texto */
-.boton-whatsapp-mini:hover,
-.boton-whatsapp-mini:focus {
-  width: 140px; /* ancho suficiente para texto */
-  transform: scale(1.05);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.4);
-}
+    /* Hover o foco: se despliega mostrando texto */
+    .boton-whatsapp-mini:hover,
+    .boton-whatsapp-mini:focus {
+      width: 140px; /* ancho suficiente para texto */
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+    }
 
-.boton-whatsapp-mini i {
-  font-size: 24px;
-  flex-shrink: 0;
-  margin-left: -4px;
-}
+    .boton-whatsapp-mini i {
+      font-size: 24px;
+      flex-shrink: 0;
+      margin-left: -4px;
+    }
 
-.boton-whatsapp-mini span {
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
+    .boton-whatsapp-mini span {
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
 
-/* Mostrar texto al desplegar */
-.boton-whatsapp-mini:hover span,
-.boton-whatsapp-mini:focus span {
-  opacity: 1;
-}
-/* Icono dentro */
-.boton-whatsapp-desplegable i {
-  font-size: 24px;
-}
+    /* Mostrar texto al desplegar */
+    .boton-whatsapp-mini:hover span,
+    .boton-whatsapp-mini:focus span {
+      opacity: 1;
+    }
+    /* Icono dentro */
+    .boton-whatsapp-desplegable i {
+      font-size: 24px;
+    }
 
-/* Mejoras específicas para la sección de servicios en móvil */
-@media (max-width: 768px) {
-  .servicios-section .container-services {
-    padding: 0 1rem;
-  }
-  
-  .servicio-card {
-    padding: 1.5rem;
-    margin-bottom: 2.5rem;
-  }
-  
-  .servicio-icon {
-    width: 70px;
-    height: 70px;
-    font-size: 1.7rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .servicio-card h3 {
-    font-size: 1.4rem;
-    line-height: 1.3;
-  }
-  
-  .servicio-card p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-  }
-  
-  .btn-detalles {
-    width: 100%;
-    justify-content: center;
-    padding: 0.9rem 1.5rem;
-    font-size: 1rem;
-  }
-  
-  /* Contenido expandido */
-  .servicio-detalles-inner {
-    padding: 1rem 0;
-  }
-  
-  .servicio-titulo {
-    font-size: 1.3rem;
-  }
-  
-  .servicio-subtitulo {
-    font-size: 0.9rem;
-  }
-  
-  .servicio-description {
-    font-size: 0.95rem;
-    margin-bottom: 1.2rem;
-  }
-  
-  .features-grid {
-    grid-template-columns: 1fr !important;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .feature-item {
-    font-size: 0.9rem;
-  }
-  
-  .servicio-pricing {
-    padding: 1.2rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .precio-desde {
-    font-size: 1.8rem;
-  }
-  
-  .servicio-actions {
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  
-  .btn-primary, .btn-secondary {
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    padding: 1rem;
-  }
-  
-  .note-prix {
-    font-size: 0.8rem;
-    margin-top: 1.2rem;
-  }
-}
+    /* Mejoras específicas para la sección de servicios en móvil */
+    @media (max-width: 768px) {
+      .servicios-section .container-services {
+        padding: 0 1rem;
+      }
+      
+      .servicio-card {
+        padding: 1.5rem;
+        margin-bottom: 2.5rem;
+      }
+      
+      .servicio-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.7rem;
+        margin-bottom: 1.2rem;
+      }
+      
+      .servicio-card h3 {
+        font-size: 1.4rem;
+        line-height: 1.3;
+      }
+      
+      .servicio-card p {
+        font-size: 1rem;
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+      
+      .btn-detalles {
+        width: 100%;
+        justify-content: center;
+        padding: 0.9rem 1.5rem;
+        font-size: 1rem;
+      }
+      
+      /* Contenido expandido */
+      .servicio-detalles-inner {
+        padding: 1rem 0;
+      }
+      
+      .servicio-titulo {
+        font-size: 1.3rem;
+      }
+      
+      .servicio-subtitulo {
+        font-size: 0.9rem;
+      }
+      
+      .servicio-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.8rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .feature-item {
+        font-size: 0.9rem;
+      }
+      
+      .servicio-pricing {
+        padding: 1.2rem;
+        margin-bottom: 1.5rem;
+      }
+      
+      .precio-desde {
+        font-size: 1.8rem;
+      }
+      
+      .servicio-actions {
+        flex-direction: column;
+        gap: 0.8rem;
+      }
+      
+      .btn-primary, .btn-secondary {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      
+      .note-prix {
+        font-size: 0.8rem;
+        margin-top: 1.2rem;
+      }
+    }
 
-/* Ajustes adicionales para pantallas muy pequeñas */
-@media (max-width: 400px) {
-  .servicio-card {
-    padding: 1.2rem;
-  }
-  
-  .servicio-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 1.5rem;
-  }
-  
-  .servicio-card h3 {
-    font-size: 1.3rem;
-  }
-}
+    /* Ajustes adicionales para pantallas muy pequeñas */
+    @media (max-width: 400px) {
+      .servicio-card {
+        padding: 1.2rem;
+      }
+      
+      .servicio-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+      }
+      
+      .servicio-card h3 {
+        font-size: 1.3rem;
+      }
+    }
 
+    .section-reviews {
+      z-index: -100;
+    }
+
+        /* ========== ESTILOS PARA EL REDISEÑO DEL SHEET ========== */
+    .sheet-rediseno {
+      background: linear-gradient(180deg, #111a17 0%, #0d1512 100%);
+      border: 1px solid rgba(52, 211, 153, 0.15);
+      box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.5);
+    }
+
+    .sheet-header-rediseno {
+      background: rgba(17, 26, 23, 0.95);
+      border-bottom: 1px solid rgba(52, 211, 153, 0.2);
+      padding: 2rem 2rem 1.5rem;
+    }
+
+    .sheet-title-rediseno {
+      font-family: 'Prata', serif;
+      font-size: 2.2rem;
+      margin: 0 0 0.5rem 0;
+      color: white;
+      background: linear-gradient(135deg, #ffffff 0%, var(--accent) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .sheet-subtitle-rediseno {
+      color: var(--accent);
+      font-size: 1.1rem;
+      margin: 0;
+      font-weight: 500;
+    }
+
+    .sheet-body-rediseno {
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .sheet-grid-rediseno {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+
+    .sheet-benefits {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .benefit-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .benefit-icon {
+      width: 50px;
+      height: 50px;
+      background: linear-gradient(135deg, var(--primaire), var(--accent));
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      color: white;
+      flex-shrink: 0;
+    }
+
+    .benefit-content h4 {
+      margin: 0 0 0.5rem 0;
+      color: white;
+      font-size: 1.1rem;
+    }
+
+    .benefit-content p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.95rem;
+    }
+
+    .sheet-testimonial-rediseno {
+      background: linear-gradient(135deg, rgba(22, 163, 74, 0.1) 0%, rgba(52, 211, 153, 0.05) 100%);
+      border-left: 4px solid var(--accent);
+      padding: 1.5rem;
+      border-radius: 0 12px 12px 0;
+      font-style: italic;
+      color: var(--muted);
+      line-height: 1.6;
+      position: relative;
+    }
+
+    .sheet-testimonial-rediseno:before {
+      content: '"';
+      position: absolute;
+      top: 0.5rem;
+      left: 0.5rem;
+      font-size: 3rem;
+      color: var(--accent);
+      opacity: 0.2;
+      font-family: serif;
+    }
+
+    @media (max-width: 968px) {
+      .sheet-grid-rediseno {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .sheet-header-rediseno {
+        padding: 1.5rem 1.5rem 1rem;
+      }
+      
+      .sheet-body-rediseno {
+        padding: 1.5rem;
+      }
+    }
+
+    /* ========== ESTILOS PARA LAS TARJETAS EXPANDIBLES ========== */
+    .servicio-card-expandible {
+      transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .servicio-card-expandible.expandido {
+      flex: 0 0 70% !important;
+      z-index: 10;
+    }
+
+    .servicio-card-expandible.contraido {
+      flex: 0 0 calc(33.333% - 2rem) !important;
+    }
+
+    @media (max-width: 1024px) {
+      .servicio-card-expandible.expandido {
+        flex: 0 0 85% !important;
+      }
+      
+      .servicio-card-expandible.contraido {
+        flex: 0 0 calc(50% - 2rem) !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .servicio-card-expandible.expandido {
+        flex: 0 0 95% !important;
+      }
+      
+      .servicio-card-expandible.contraido {
+        flex: 0 0 calc(100% - 2rem) !important;
+      }
+    }
   </style>
 </head>
 <body class="bg-gray-900">
@@ -1505,7 +1663,7 @@
   </nav>
 
   <!-- HERO -->
-  <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
+  <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden" data-aos="fade-in">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
             <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1600&auto=format&fit=crop" alt="Opción 3" 
@@ -1524,18 +1682,18 @@
                 <!-- Left Column - Content -->
                 <div class="space-y-8">
                     <div class="space-y-4">
-                        <h1 class="text-4xl lg:text-6xl font-bold leading-tight">
+                        <h1 class="text-4xl lg:text-6xl font-bold leading-tight" data-aos="fade-right" data-aos-delay="100">
                             Soluciones confiables 
-                            <span class="texte-degrade block">para tu hogar y tu negocio</span>
+                            <span class="texte-degrade block" data-aos="fade-right" data-aos-delay="200">para tu hogar y tu negocio</span>
                         </h1>
                         
-                        <p class="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl">
-                            Soy <strong class="text-emerald-300">Guerlyne Vital</strong> y pongo mi experiencia al servicio de familias y emprendedores. Limpieza detallada de casas y oficinas, cuidado responsable de niños, y apoyo a pequeños negocios con promoción y presencia digital. Mi compromiso: <span class="text-emerald-300 font-semibold">confianza, amabilidad y resultados visibles.</span>
+                        <p class="text-lg lg:text-xl text-gray-300 leading-relaxed max-w-2xl" data-aos="fade-right" data-aos-delay="300">
+                            Soy <strong class="text-emerald-300">Guerlyne Vital</strong> y pongo mi experiencia al servicio de familias y emprendedores. Limpieza detallada de casas y oficinas, cuidado responsable de niños, y apoyo a negocios y emprendimientos con promoción activa y presencia digital. Mi compromiso: <span class="text-emerald-300 font-semibold">confianza, amabilidad y resultados visibles.</span>
                         </p>
                     </div>
                     
                     <!-- CTA Buttons -->
-                    <div class="flex flex-col sm:flex-row gap-4">
+                    <div class="flex flex-col sm:flex-row gap-4" data-aos="fade-right" data-aos-delay="400">
                         <a href="#servicios" 
                            class="btn-primaire inline-flex items-center justify-center px-8 py-4 text-white font-semibold rounded-full transition-all duration-300 group">
                             Ver servicios
@@ -1544,7 +1702,7 @@
                     </div>
                     
                     <!-- Trust Badges -->
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="500">
                         <div class="badge-confiance flex items-center gap-3 px-4 py-3 rounded-xl backdrop-blur-sm">
                             <i class="fas fa-award text-emerald-400 text-lg"></i>
                             <span class="text-sm font-medium">+5 años de experiencia</span>
@@ -1558,7 +1716,7 @@
                 
                 <!-- Right Column - Profile Card -->
                 <div class="flex justify-center lg:justify-end">
-                    <div class="carte-profil p-8 rounded-3xl max-w-md w-full flottant">
+                    <div class="carte-profil p-8 rounded-3xl max-w-md w-full flottant" data-aos="fade-left" data-aos-delay="400">
                         <div class="text-center space-y-6">
                             <div class="relative inline-block">
                                 <img src="https://images.unsplash.com/photo-1616680214053-c0f3e2b0b34e?q=80&w=400&auto=format&fit=crop" 
@@ -1594,144 +1752,142 @@
         </div>
     </section>
 
-    
-
-        <!-- Sección de servicios -->
-<section class="servicios-section">
-  <div class="container-services">
-    <!-- Header -->
-    <div class="section-header">
-      <div class="section-subtitle" id="servicios">Mis <strong>2</strong> Servicios</div>
-      <h2 class="section-title">Soluciones Profesionales</h2>
-    </div>
-
-    <!-- Grid principal -->
-    <div class="servicios-grid">
-
-      <!-- 1) Limpieza profesional -->
-      <article class="servicio-card" data-card id="servicios1">
-        <div class="servicio-icon" aria-hidden="true"><i class="fa-solid fa-house"></i></div>
-        <h3>Limpieza de Casas y Oficinas</h3>
-        <p>Servicio cuidadoso por Guerlyne Vital, para que tu casa o tu oficina se mantenga limpia y agradable.</p>
-
-        <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-1">
-          <span>Ver más</span>
-          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </button>
-
-        <div id="detalles-1" class="servicio-detalles" role="region" aria-label="Detalles limpieza">
-          <div class="servicio-detalles-inner contenido-estilo">
-            <div class="servicio-header">
-              <h4 class="servicio-titulo">Limpieza Profesional</h4>
-              <span class="servicio-subtitulo">Hogar & Oficina ✓</span>
-            </div>
-
-            <p class="servicio-description">
-              Atención detallada y productos seguros para un ambiente limpio y saludable.
-            </p>
-
-            <div class="features-grid">
-              <div class="feature-item"><span class="feature-icon">✓</span>Limpieza completa: cocina, baños, ventanas y pisos</div>
-              <div class="feature-item"><span class="feature-icon">✓</span>Aspirado y trapeado profundo</div>
-              <div class="feature-item"><span class="feature-icon">✓</span>Productos seguros para niños y mascotas</div>
-              <div class="feature-item"><span class="feature-icon">✓</span>Opcional: organización básica de espacios y lavandería</div>
-            </div>
-
-            <div class="servicio-pricing">
-              <div class="pricing-header">
-                <div class="precio-desde">$20 <span class="precio-unidad">/ hora</span></div>
-                <span class="precio-badge">Confiable</span>
-              </div>
-              <div class="precio-extra">Tarifas especiales para clientes frecuentes</div>
-            </div>
-
-            <div class="servicio-actions">
-              <a href="#contacto" class="btn-primary">Contactar Ahora</a>
-              <a href="#mas-info" class="btn-secondary">Más Información</a>
-            </div>
-            <p class="note-prix">
-            * Precios pueden variar según la ubicación, frecuencia y requisitos específicos. 
-            <a href="#contacto" style="color: var(--accent); text-decoration: underline;">Contáctame</a> para una cotización personalizada.
-          </p>
-          </div>
+    <!-- Sección de servicios -->
+    <section class="servicios-section" data-aos="fade-up">
+      <div class="container-services">
+        <!-- Header -->
+        <div class="section-header">
+          <div class="section-subtitle" id="servicios">Mis <strong>2</strong> Servicios</div>
+          <h2 class="section-title">Soluciones Profesionales</h2>
         </div>
-      </article>
 
-      <!-- 2) Cuidado de niños -->
-      <article class="servicio-card" data-card id="servicios2">
-        <div class="servicio-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
-        <h3>Cuidado Infantil – Apoyo a Padres</h3>
-        <p>Ofrezco apoyo y cuidado responsable para que los padres puedan disponer de unas horas para su trabajo, su pareja o su descanso cuando lo necesiten</p>
+        <!-- Grid principal -->
+        <div class="servicios-grid">
 
-        <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-2">
-          <span>Ver más</span>
-          <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
-        </button>
+          <!-- 1) Limpieza profesional -->
+          <article class="servicio-card" data-card id="servicios1" data-aos="fade-right">
+            <div class="servicio-icon" aria-hidden="true"><i class="fa-solid fa-house"></i></div>
+            <h3>Limpieza de Casas y Oficinas</h3>
+            <p>Servicio cuidadoso por Guerlyne Vital, para que tu casa o tu oficina se mantenga limpia y agradable.</p>
 
-        <div id="detalles-2" class="servicio-detalles" role="region" aria-label="Detalles cuidado de niños">
-          <div class="servicio-detalles-inner contenido-estilo">
-            <div class="servicio-header">
-              <h4 class="servicio-titulo">Cuidado Infantil</h4>
-              <span class="servicio-subtitulo">Apoyo a Padres ✓</span>
-            </div>
+            <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-1">
+              <span>Ver más</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
 
-            <p class="servicio-description">
-              Servicio confiable, pensado para liberar tiempo a los padres y brindar
-              un entorno seguro y afectuoso a los niños pequeños.
-            </p>
+            <div id="detalles-1" class="servicio-detalles" role="region" aria-label="Detalles limpieza">
+              <div class="servicio-detalles-inner contenido-estilo">
+                <div class="servicio-header">
+                  <h4 class="servicio-titulo">Limpieza Profesional</h4>
+                  <span class="servicio-subtitulo">Hogar & Oficina ✓</span>
+                </div>
 
-            <div class="features-grid">
-              <div class="feature-item"><span class="feature-icon">✓</span>Experiencia con bebés y niños en edad escolar</div>
-              <div class="feature-item"><span class="feature-icon">✓</span>Juegos y actividades creativas</div>
-              <div class="feature-item"><span class="feature-icon">✓</span>Apoyo básico en meriendas y rutinas</div>
-              <div class="feature-item"><span class="feature-icon">✓</span>Reportes y mensajes para mantener a los padres tranquilos</div>
-            </div>
+                <p class="servicio-description">
+                  Atención detallada y productos seguros para un ambiente limpio y saludable.
+                </p>
 
-            <div class="servicio-pricing">
-              <div class="pricing-header">
-                <div class="precio-desde">$18 <span class="precio-unidad">/ hora</span></div>
-                <span class="precio-badge">Confiable</span>
+                <div class="features-grid">
+                  <div class="feature-item"><span class="feature-icon">✓</span>Limpieza completa: cocina, baños, ventanas y pisos</div>
+                  <div class="feature-item"><span class="feature-icon">✓</span>Aspirado y trapeado profundo</div>
+                  <div class="feature-item"><span class="feature-icon">✓</span>Productos seguros para niños y mascotas</div>
+                  <div class="feature-item"><span class="feature-icon">✓</span>Opcional: organización básica de espacios y lavandería</div>
+                </div>
+
+                <div class="servicio-pricing">
+                  <div class="pricing-header">
+                    <div class="precio-desde">$20 <span class="precio-unidad">/ hora</span></div>
+                    <span class="precio-badge">Confiable</span>
+                  </div>
+                  <div class="precio-extra">Tarifas especiales para clientes frecuentes</div>
+                </div>
+
+                <div class="servicio-actions">
+                  <a href="#contacto" class="btn-primary">Contactar Ahora</a>
+                  <a href="#mas-info" class="btn-secondary">Más Información</a>
+                </div>
+                <p class="note-prix">
+                * Precios pueden variar según la ubicación, frecuencia y requisitos específicos. 
+                <a href="#contacto" style="color: var(--accent); text-decoration: underline;">Contáctame</a> para una cotización personalizada.
+              </p>
               </div>
-              <div class="precio-extra">Tarifas especiales para servicios frecuentes</div>
             </div>
+          </article>
 
-            <div class="servicio-actions">
-              <a href="#contacto" class="btn-primary">Contactar Ahora</a>
-              <a href="#mas-info" class="btn-secondary">Más Información</a>
+          <!-- 2) Cuidado de niños -->
+          <article class="servicio-card" data-card id="servicios2" data-aos="fade-left">
+            <div class="servicio-icon" aria-hidden="true"><i class="fa-solid fa-heart"></i></div>
+            <h3>Cuidado Infantil – Apoyo a Padres</h3>
+            <p>Ofrezco apoyo y cuidado responsable para que los padres puedan disponer de unas horas para su trabajo, su pareja o su descanso cuando lo necesiten</p>
+
+            <button class="btn-detalles" data-toggle aria-expanded="false" aria-controls="detalles-2">
+              <span>Ver más</span>
+              <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </button>
+
+            <div id="detalles-2" class="servicio-detalles" role="region" aria-label="Detalles cuidado de niños">
+              <div class="servicio-detalles-inner contenido-estilo">
+                <div class="servicio-header">
+                  <h4 class="servicio-titulo">Cuidado Infantil</h4>
+                  <span class="servicio-subtitulo">Apoyo a Padres ✓</span>
+                </div>
+
+                <p class="servicio-description">
+                  Servicio confiable, pensado para liberar tiempo a los padres y brindar
+                  un entorno seguro y afectuoso a los niños pequeños.
+                </p>
+
+                <div class="features-grid">
+                  <div class="feature-item"><span class="feature-icon">✓</span>Experiencia con bebés y niños en edad escolar</div>
+                  <div class="feature-item"><span class="feature-icon">✓</span>Juegos y actividades creativas</div>
+                  <div class="feature-item"><span class="feature-icon">✓</span>Apoyo básico en meriendas y rutinas</div>
+                  <div class="feature-item"><span class="feature-icon">✓</span>Reportes y mensajes para mantener a los padres tranquilos</div>
+                </div>
+
+                <div class="servicio-pricing">
+                  <div class="pricing-header">
+                    <div class="precio-desde">$18 <span class="precio-unidad">/ hora</span></div>
+                    <span class="precio-badge">Confiable</span>
+                  </div>
+                  <div class="precio-extra">Tarifas especiales para servicios frecuentes</div>
+                </div>
+
+                <div class="servicio-actions">
+                  <a href="#contacto" class="btn-primary">Contactar Ahora</a>
+                  <a href="#mas-info" class="btn-secondary">Más Información</a>
+                </div>
+                <p class="note-prix">
+                * Precios pueden variar según la ubicación, frecuencia y requisitos específicos. 
+                <a href="#contacto" style="color: var(--accent); text-decoration: underline;">Contáctame</a> para una cotización personalizada.
+              </p>
+              </div>
             </div>
-            <p class="note-prix">
-            * Precios pueden variar según la ubicación, frecuencia y requisitos específicos. 
-            <a href="#contacto" style="color: var(--accent); text-decoration: underline;">Contáctame</a> para una cotización personalizada.
-          </p>
-          </div>
+          </article>
+
         </div>
-      </article>
-
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- ======= SECTION PROMO ======= -->
-    <section class="promocion-section" aria-labelledby="promo-heading">
+    <section class="promocion-section" aria-labelledby="promo-heading" data-aos="fade-up">
         <div class="overlay-verde" aria-hidden="true"></div>
 
         <div class="limitar-ancho">
             <div class="contenedor-promo" id="promocion">
                 <!-- Columna izquierda: Título -->
-                <div class="promo-title">
+                <div class="promo-title" data-aos="fade-right">
                     <p class="etiqueta">Servicio Premium</p>
                     <h2 id="promo-heading" class="titulo-seccion">Promoción de tu negocio</h2>
                 </div>
 
                 <!-- Texto descriptivo -->
-                <div class="promo-text">
+                <div class="promo-text" data-aos="fade-up" data-aos-delay="200">
                     <p>
                         Lleva tu negocio a los bolsillos de tus clientes. Soy Guerlyne Vital y ayudo a que tu negocio gane más visibilidad. Distribuyo personalmente cartas de presentación elegantes de tu negocio y además puedo proporcionarte un sitio web profesional para que tus clientes también te encuentren en línea mediante las cartas distribuidas.
                     </p>
                 </div>
 
                 <!-- Botón -->
-                <div class="promo-button">
+                <div class="promo-button" data-aos="fade-left" data-aos-delay="400">
                     <button class="btn-promo" id="open-sheet" aria-expanded="false" aria-controls="sheet">
                         Conoce más detalles
                     </button>
@@ -1740,61 +1896,89 @@
         </div>
 
         <!-- Bottom Sheet (desde services.html) -->
-<div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>
+        <div class="sheet-backdrop" id="sheet-backdrop" aria-hidden="true"></div>
 
-<aside class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" aria-describedby="sheet-desc">
-    <div class="sheet-header">
-        <div class="sheet-handle" aria-hidden="true" style="width:48px;height:5px;border-radius:999px;background:rgba(255,255,255,.08);margin:0 auto;"></div>
-        <button class="sheet-close-x" id="sheet-close-x" aria-label="Cerrar ventana">&times;</button>
+        <aside class="sheet sheet-rediseno" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" aria-describedby="sheet-desc">
+            <div class="sheet-header sheet-header-rediseno">
+                <div class="sheet-handle" aria-hidden="true" style="width:48px;height:5px;border-radius:999px;background:rgba(255,255,255,.08);margin:0 auto;"></div>
+                <button class="sheet-close-x" id="sheet-close-x" aria-label="Cerrar ventana">&times;</button>
 
-        <h4 id="sheet-title" class="sheet-title">Promoción de Negocios</h4>
-        <p id="sheet-desc" class="sheet-subtitle">Plan integral: cartas de presentación + web profesional</p>
-    </div>
-
-    <div class="sheet-body">
-        <div class="sheet-images" aria-hidden="false">
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Carta elegante">
-                <div class="image-caption">Cartas de presentación profesionales</div>
-            </div>
-            <div class="image-container">
-                <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop" alt="Sitio web en laptop">
-                <div class="image-caption">Sitio web optimizado para móviles</div>
-            </div>
-        </div>
-
-        <div class="sheet-details">
-            <p class="sheet-description">
-                Antes tu negocio se veía solo en la calle; ahora también estará en bolsillos, carteras, casas y celulares. Yo me encargo de <strong>salir a repartir</strong> and de que exista un <strong>punto digital</strong> al que tus clientes lleguen con un toque mediante las cartas físicas.
-            </p>
-
-            <ul class="features-list">
-                <li>Distribución de cartas/flyers con (web + info)</li>
-                <li>Sitio web incluido, como material profesional de apoyo(sin coste adicional)</li>
-                <li>Entrega personal en zonas estratégicas</li>
-                <li>Sitio web rápido, adaptado a móvil и confiable</li>
-                <li>Botón de WhatsApp, formulario completo y mapa para llegar fácil</li>
-            </ul>
-
-            <div class="sheet-testimonial">
-                Si más personas ven su negocio, más clientes tendrá. En estos tiempos no basta con estar presente solo en las calles. Una tarjeta bien entregada dirige directamente a su página web, donde la gente encuentra información clara sobre sus servicios. Así, cuando necesiten lo que usted ofrece, recordarán su tarjeta, visitarán su web y podrán contactarlo de inmediato para contratarlo.
+                <h4 id="sheet-title" class="sheet-title-rediseno">Promoción de Negocios</h4>
+                <p id="sheet-desc" class="sheet-subtitle-rediseno">Plan integral: cartas de presentación + web profesional</p>
             </div>
 
-            <div class="sheet-actions">
+            <div class="sheet-body sheet-body-rediseno">
+                <div class="sheet-grid-rediseno">
+                    <div class="sheet-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-envelope-open-text"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Cartas de Presentación Profesionales</h4>
+                                <p>Diseño elegante y distribución personalizada en zonas estratégicas para maximizar el impacto.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Sitio Web Incluido</h4>
+                                <p>Presencia digital profesional sin coste adicional, optimizada para móviles y con todas las funcionalidades necesarias.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Entrega Estratégica</h4>
+                                <p>Distribución inteligente en áreas de alto tráfico y potenciales clientes interesados en tus servicios.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="benefit-content">
+                                <h4>Optimizado para Móviles</h4>
+                                <p>Tu web se verá perfecta en cualquier dispositivo, con botones de contacto directo y mapa de ubicación.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sheet-images" aria-hidden="false">
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=800&auto=format&fit=crop" alt="Carta elegante">
+                            <div class="image-caption">Cartas de presentación profesionales</div>
+                        </div>
+                        <div class="image-container">
+                            <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop" alt="Sitio web en laptop">
+                            <div class="image-caption">Sitio web optimizado para móviles</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sheet-testimonial-rediseno">
+                    Si más personas ven su negocio, más clientes tendrá. En estos tiempos no basta con estar presente solo en las calles. Una tarjeta bien entregada dirige directamente a su página web, donde la gente encuentra información clara sobre sus servicios. Así, cuando necesiten lo que usted ofrece, recordarán su tarjeta, visitarán su web y podrán contactarlo de inmediato para contratarlo.
+                </div>
+
+                <div class="sheet-actions">
                 <button class="btn-sheet btn-primary" id="sheet-cta-primary">Contactar ahora</button>
                 <button class="btn-sheet btn-secondary"><a href="info.html">Mas info</a></button>
             </div>
-        </div>
-    </div>
-  </aside>
-</section>
+            </div>
+        </aside>
+    </section>
 
 <!-- Sección de reseñas mejorada -->
   <section id="reseñas" class="reviews-section-guerlyne">
     <div class="conteneur">
       <h2><i class="fas fa-star"></i> Reseñas de Clientes</h2>
-      <p class="reviews-subtitle">Lo que nuestros clientes dicen sobre nuestros servicios</p>
-
       <div class="reviews-container-guerlyne">
         <div class="reviews-scroll-indicator">
           <div class="scroll-progress"></div>
@@ -1906,8 +2090,7 @@
     </div>
   </section>
 
-
-  <!-- SECCIÓN DEL REPRODUCTOR DE AUDIO (añadir al final del body) -->
+    <!-- SECCIÓN DEL REPRODUCTOR DE AUDIO (añadir al final del body) -->
     <div class="audio-player-container">
         <!-- Botón de siguiente audio -->
         <div class="next-audio-btn-container" id="next-audio-container">
@@ -1962,30 +2145,36 @@
         </div>
     </div>
 
-<footer class="pied-de-page-site">
-  <div class="conteneur grille-pied">
-    <div class="contact-pied">
-  <div class="info-contact">
-    <p><i class="fa-regular fa-envelope"></i> <a href="mailto:guerlyne@email.com">guerlyne@email.com</a></p>
-    <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/1234567890">+1 (234) 567-8900</a></p>
-    <p><i class="fa-solid fa-location-dot"></i> Santo Domingo y alrededores</p>
-  </div>
-  <div class="social">
-    <a href="https://wa.me/1234567890" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="mailto:guerlyne@email.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
-  </div>
-</div>
-  <div class="bas-pied">© 2025 Guerlyne Vital. Todos los derechos reservados.</div>
-</footer>
+    <footer class="pied-de-page-site" data-aos="fade-up">
+        <div class="conteneur grille-pied">
+            <div class="contact-pied">
+                <div class="info-contact">
+                    <p><i class="fa-regular fa-envelope"></i> <a href="mailto:guerlyne@email.com">guerlyne@email.com</a></p>
+                    <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/1234567890">+1 (234) 567-8900</a></p>
+                    <p><i class="fa-solid fa-location-dot"></i> Santo Domingo y alrededores</p>
+                </div>
+                <div class="social">
+                    <a href="https://wa.me/1234567890" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="mailto:guerlyne@email.com" aria-label="Email"><i class="fa-regular fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="bas-pied">© 2025 Guerlyne Vital. Todos los derechos reservados.</div>
+        </div>
+    </footer>
 
-<!-- Canvas para partículas (desde services.html) -->
-<canvas id="particles"></canvas>
-<script src="main.js"></script>
-<script src="scripts.js"></script>
+    <!-- Canvas para partículas (desde services.html) -->
+    <canvas id="particles"></canvas>
+    
+    <!-- AOS Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script src="scripts.js"></script>
+    <script src="main.js"></script>
+   
 
-  <a href="https://wa.me/1234567890" target="_blank" class="boton-whatsapp-mini">
-  <i class="fab fa-whatsapp"></i>
-  <span>WhatsApp</span>
-</a>
+    <a href="https://wa.me/1234567890" target="_blank" class="boton-whatsapp-mini">
+        <i class="fab fa-whatsapp"></i>
+        <span>WhatsApp</span>
+    </a>
 </body>
 </html>
